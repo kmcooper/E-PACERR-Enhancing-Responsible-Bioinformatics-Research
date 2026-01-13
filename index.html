@@ -23,7 +23,6 @@
       color: var(--text);
     }
 
-    /* Skip link for keyboard users */
     .skip-link {
       position: absolute;
       left: -9999px;
@@ -62,27 +61,6 @@
       padding: 1rem;
     }
 
-    /* Quick links / actions */
-    .actions {
-      border: 2px solid var(--border);
-      border-radius: 0.75rem;
-      background: var(--card);
-      padding: 1rem;
-      margin: 1rem 0 2rem 0;
-    }
-    .actions h2{
-      margin-top: 0;
-      font-size: 1.25rem;
-    }
-    .actions ul{
-      padding-left: 1.25rem;
-      margin: 0.5rem 0 0 0;
-      max-width: 70ch;
-    }
-    .actions li{
-      margin: 0.5rem 0;
-    }
-
     .module-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -102,6 +80,15 @@
       margin-bottom: 0.25rem;
     }
 
+    .module ul {
+      padding-left: 1.25rem;
+      margin: 0.5rem 0;
+    }
+
+    .module li {
+      margin: 0.4rem 0;
+    }
+
     a {
       color: var(--link);
       text-decoration-thickness: 2px;
@@ -112,8 +99,7 @@
       text-decoration: underline;
     }
 
-    /* Visible focus indicator (WCAG 2.1 AA friendly) */
-    a:focus-visible, button:focus-visible {
+    a:focus-visible {
       outline: 3px solid var(--focus);
       outline-offset: 2px;
       border-radius: 0.25rem;
@@ -137,43 +123,12 @@
   <header>
     <h1>E-PACERR Educational Modules</h1>
     <p>
-      A no-cost, open, self-paced curriculum supporting excellence, reproducibility,
+      A free, open, self-paced curriculum supporting excellence, reproducibility,
       and professionalism in bioinformatics research.
     </p>
   </header>
 
   <main id="main-content">
-    <!-- Top-level actions / entry points -->
-    <section class="actions" aria-labelledby="actions-heading">
-      <h2 id="actions-heading">Start here</h2>
-      <ul>
-        <li>
-          <a href="#" aria-label="Enroll in the self-paced Canvas course (link placeholder)">
-            Enroll in the Self-Paced Course (Students)
-          </a>
-        </li>
-        <li>
-          <a href="#" aria-label="Download the Canvas LMS course from Canvas Commons (link placeholder)">
-            Download the Canvas LMS Course (Instructors)
-          </a>
-        </li>
-        <li>
-          <a href="#" aria-label="Download module slides (link placeholder)">
-            Download Module Slides
-          </a>
-        </li>
-        <li>
-          <a href="#" aria-label="Watch module videos (link placeholder)">
-            Watch Module Videos
-          </a>
-        </li>
-      </ul>
-      <p>
-        You can replace the placeholder links above with your Canvas enrollment link, Canvas Commons download link,
-        and your slides/video pages when ready.
-      </p>
-    </section>
-
     <section aria-labelledby="modules-heading">
       <h2 id="modules-heading">Available Modules</h2>
 
@@ -184,82 +139,264 @@
           <p>This module introduces core concepts and shared vocabulary used throughout the course.</p>
           <ul>
             <li>
-              <a href="#" aria-label="Enroll in the self-paced Canvas course starting with Module 1 (link placeholder)">
-                Enroll in the Self-Paced Course (Students)
+              <a href="#">
+                View and Download Module Content
               </a>
             </li>
             <li>
-              <a href="#" aria-label="Download the Canvas LMS course starting with Module 1 (link placeholder)">
+              <a href="#">
+                Enroll in the Self-Paced Canvas Course (Students)
+              </a>
+            </li>
+            <li>
+              <a href="#">
                 Download the Canvas LMS Course (Instructors)
               </a>
             </li>
-            <li>
-              <a href="#" aria-label="Download slides for Module 1 (link placeholder)">
-                Download Module 1 Slides
-              </a>
-            </li>
-            <li>
-              <a href="#" aria-label="Watch videos for Module 1 (link placeholder)">
-                Watch Module 1 Videos
-              </a>
-            </li>
           </ul>
-          <a href="modules/module-1/">View module overview</a>
         </article>
 
         <article class="module">
           <h3>2. Replicability in Bioinformatics</h3>
-          <a href="modules/module-2/">View module</a>
+          <p>This module ....</p>
+          <ul>
+            <li>
+              <a href="#">
+                View and Download Module Content
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Enroll in the Self-Paced Canvas Course (Students)
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Download the Canvas LMS Course (Instructors)
+              </a>
+            </li>
+          </ul>
         </article>
 
         <article class="module">
           <h3>3. Statistical Rigor in Bioinformatics</h3>
-          <a href="modules/module-3/">View module</a>
+<p>This module ....</p>
+          <ul>
+            <li>
+              <a href="#">
+                View and Download Module Content
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Enroll in the Self-Paced Canvas Course (Students)
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Download the Canvas LMS Course (Instructors)
+              </a>
+            </li>
+          </ul>
         </article>
 
         <article class="module">
           <h3>4. Reliability, Generalizability, &amp; Robustness in Bioinformatics</h3>
-          <a href="modules/module-4/">View module</a>
+<p>This module ....</p>
+          <ul>
+            <li>
+              <a href="#">
+                View and Download Module Content
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Enroll in the Self-Paced Canvas Course (Students)
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Download the Canvas LMS Course (Instructors)
+              </a>
+            </li>
+          </ul>
         </article>
 
         <article class="module">
           <h3>5. Case Studies for Responsible Research in Bioinformatics</h3>
-          <a href="modules/module-5/">View module</a>
+          <p>This module ....</p>
+          <ul>
+            <li>
+              <a href="#">
+                View and Download Module Content
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Enroll in the Self-Paced Canvas Course (Students)
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Download the Canvas LMS Course (Instructors)
+              </a>
+            </li>
+          </ul>
         </article>
 
         <article class="module">
-          <h3>6. Databases and Reproducible Data Mining in Bioinformatics</h3>
-          <a href="modules/module-6/">View module</a>
+         <h3>6. Databases and Reproducible Data Mining in Bioinformatics</h3>
+            <p>This module ....</p>
+              <ul>
+                <li>
+                  <a href="#">
+                    View and Download Module Content
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Enroll in the Self-Paced Canvas Course (Students)
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Download the Canvas LMS Course (Instructors)
+                  </a>
+                </li>
+              </ul>
         </article>
 
         <article class="module">
           <h3>7. Best Practices for Data Sharing in Bioinformatics</h3>
-          <a href="modules/module-7/">View module</a>
+          <p>This module ....</p>
+          <ul>
+            <li>
+              <a href="#">
+                View and Download Module Content
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Enroll in the Self-Paced Canvas Course (Students)
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Download the Canvas LMS Course (Instructors)
+              </a>
+            </li>
+          </ul>
+
         </article>
 
         <article class="module">
           <h3>8. Best Practices for Code Sharing in Bioinformatics</h3>
-          <a href="modules/module-8/">View module</a>
+          <p>This module ....</p>
+          <ul>
+            <li>
+              <a href="#">
+                View and Download Module Content
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Enroll in the Self-Paced Canvas Course (Students)
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Download the Canvas LMS Course (Instructors)
+              </a>
+            </li>
+          </ul>
         </article>
 
         <article class="module">
           <h3>9. Standards for Excellence in Bioinformatics Education &amp; Training</h3>
-          <a href="modules/module-9/">View module</a>
+          <p>This module ....</p>
+          <ul>
+            <li>
+              <a href="#">
+                View and Download Module Content
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Enroll in the Self-Paced Canvas Course (Students)
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Download the Canvas LMS Course (Instructors)
+              </a>
+            </li>
+          </ul>
         </article>
 
         <article class="module">
           <h3>10. Advocacy in Bioinformatics Research and Education</h3>
-          <a href="modules/module-10/">View module</a>
+          <p>This module ....</p>
+          <ul>
+            <li>
+              <a href="#">
+                View and Download Module Content
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Enroll in the Self-Paced Canvas Course (Students)
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Download the Canvas LMS Course (Instructors)
+              </a>
+            </li>
+          </ul>
         </article>
 
         <article class="module">
           <h3>11. Technical Writing Skills for Responsible Bioinformatics Communication</h3>
-          <a href="modules/module-11/">View module</a>
+          <p>This module ....</p>
+          <ul>
+            <li>
+              <a href="#">
+                View and Download Module Content
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Enroll in the Self-Paced Canvas Course (Students)
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Download the Canvas LMS Course (Instructors)
+              </a>
+            </li>
+          </ul>
         </article>
 
         <article class="module">
           <h3>12. Professionalism in Bioinformatics</h3>
-          <a href="modules/module-12/">View module</a>
+          <p>This module ....</p>
+          <ul>
+            <li>
+              <a href="#">
+                View and Download Module Content
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Enroll in the Self-Paced Canvas Course (Students)
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Download the Canvas LMS Course (Instructors)
+              </a>
+            </li>
+          </ul>
         </article>
 
       </div>
@@ -269,7 +406,7 @@
   <footer>
     <p>
       Accessibility: This site is designed to conform to WCAG 2.1 Level AA.
-      For accessibility issues, contact the project team.
+      For accessibility issues, please let us know using this link: <a href="https://unomaha.az1.qualtrics.com/jfe/form/SV_5AqZKWawUuMPjym">Report a Problem</a> 
     </p>
   </footer>
 </body>
