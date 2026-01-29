@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Module 1: Reproducibility in Bioinformatics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Module 1: Reproducibility in Bioinformatics — videos, transcripts, and resources." />
+
+  <style>
+    /* Base layout */
+    :root{
+      --bg: #ffffff;
+      --text: #111111;
+      --muted: #6b7280;
+      --link: #003366;           /* dark blue with good contrast */
+      --card-bg: #fbfdff;
+      --border: #e5e7eb;
+      --focus: #ffbf47;         /* visible focus color (contrasts with dark elements) */
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    /* Skip link */
+    .skip-link{
+      position: absolute;
+      left: -999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .skip-link:focus{
+      left: 1rem;
+      top: 1rem;
+      width: auto;
+      height: auto;
+      padding: 0.5rem 0.75rem;
+      background: var(--link);
+      color: #fff;
+      border-radius: 4px;
+      z-index: 9999;
+    }
+
+    header, main, footer {
+      max-width: 940px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 1.25rem;
+    }
+
+    header { border-bottom: 2px solid var(--border); }
+    h1 { font-size: 1.6rem; margin: 0 0 0.25rem 0; }
+    p.lead { margin: 0 0 1rem 0; color: var(--muted); }
+
+    /* Module grid / card */
+    .module-meta { display:flex; gap:1rem; flex-wrap:wrap; align-items:center; margin:0.5rem 0 1rem 0; }
+    .module-meta .back { font-size: 0.95rem; }
+
+    section + section { margin-top: 1.5rem; }
+
+    .video-card{
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    .video-title { font-weight:600; margin:0 0 0.5rem 0; }
+    .video-description { margin:0 0 0.5rem 0; color:var(--muted); }
+
+    ul { padding-left: 1.25rem; margin: 0.5rem 0; }
+
+    a { color: var(--link); }
+    a:hover, a:active { text-decoration: underline; }
+
+    /* Focus styles for keyboard users (visible) */
+    a:focus, button:focus {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+    }
+    a:focus:not(:focus-visible) { outline: none; } /* keep mouse clicks clean */
+
+    /* Ensure video element responsive */
+    .video-wrap{
+      max-width: 100%;
+    }
+    video{
+      width:100%;
+      height:auto;
+      border-radius:6px;
+      background: #000;
+    }
+
+    footer { border-top: 1px solid var(--border); font-size:0.95rem; color:var(--muted); padding-top:1rem; }
+    .small { font-size:0.92rem; color:var(--muted); }
+
+    @media (prefers-reduced-motion: reduce){
+      * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Skip link for keyboard users -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header role="banner" aria-labelledby="page-title">
+    <h1 id="page-title">Module 1: Reproducibility in Bioinformatics</h1>
+    <p class="lead">Introductory module on reproducible computational workflows, with videos, captions, and transcripts.</p>
+
+    <p class="module-meta">
+      <span class="back"><a href="../../" title="Back to modules list">← Back to all modules</a></span>
+      <span class="small" aria-hidden="true">•</span>
+      <span class="small">Estimated time: ~6 hours</span>
+    </p>
+  </header>
+
+  <main id="main-content" role="main" aria-labelledby="learning-objectives-heading">
+    <!-- Quick contents for long pages -->
+    <nav aria-label="Page contents">
+      <p class="small">Contents:</p>
+      <ul>
+        <li><a href="#learning-objectives">Learning objectives</a></li>
+        <li><a href="#videos">Instructional videos</a></li>
+        <li><a href="#resources">Readings & resources</a></li>
+        <li><a href="#next-steps">Next steps</a></li>
+      </ul>
+    </nav>
+
+    <section id="learning-objectives" aria-labelledby="learning-objectives-heading">
+      <h2 id="learning-objectives-heading">Learning objectives</h2>
+      <ul>
+        <li>Define reproducibility in bioinformatics research.</li>
+        <li>Recognize characteristics of reproducible computational workflows.</li>
+        <li>Identify common barriers to reproducibility.</li>
+        <li>Apply core reproducibility practices to a small project.</li>
+      </ul>
+    </section>
+
+    <section id="videos" aria-labelledby="videos-heading">
+      <h2 id="videos-heading">Instructional videos</h2>
+
+      <!-- Video 1.1 -->
+      <article class="video-card" aria-labelledby="vid1-title">
+        <h3 id="vid1-title" class="video-title">Video 1.1 — What Is Reproducibility?</h3>
+        <p class="video-description">Short introduction to reproducibility, examples, and distinctions from replicability.</p>
+
+        <!-- Replace src with your hosted mp4; replace caption track with actual .vtt file -->
+        <div class="video-wrap" aria-describedby="vid1-desc">
+          <video controls preload="metadata" aria-describedby="vid1-desc" >
+            <source src="videos/video-1-1.mp4" type="video/mp4">
+            <!-- captions file: create a WebVTT file at videos/video-1-1.vtt -->
+            <track kind="captions" label="English captions" srclang="en" src="videos/video-1-1.vtt" default>
+            <!-- optionally include an audio description track if available -->
+            <!-- <track kind="descriptions" label="Audio descriptions" srclang="en" src="videos/video-1-1-desc.vtt"> -->
+            Your browser does not support the HTML5 video element. A captioned version and a transcript are available below.
+          </video>
+          <p id="vid1-desc" class="small">Duration: 8:22 — Captions provided. Transcript available as plain text.</p>
+        </div>
+
+        <p style="margin-top:0.5rem;">
+          <a href="videos/video-1-1.vtt" download aria-label="Download captions for Video 1.1 — What Is Reproducibility?">Download captions (VTT)</a>
+          <span style="margin:0 0.5rem;color:var(--muted)">|</span>
+          <a href="transcripts/video-1-1.txt" aria-label="Read transcript for Video 1.1 — What Is Reproducibility?">Read transcript (text)</a>
+        </p>
+      </article>
+
+      <!-- Video 1.2 -->
+      <article class="video-card" aria-labelledby="vid2-title">
+        <h3 id="vid2-title" class="video-title">Video 1.2 — Why Reproducibility Matters in Bioinformatics</h3>
+        <p class="video-description">Examples of reproducible projects and the impact on science and reuse.</p>
+
+        <div class="video-wrap" aria-describedby="vid2-desc">
+          <video controls preload="metadata" aria-describedby="vid2-desc">
+            <source src="videos/video-1-2.mp4" type="video/mp4">
+            <track kind="captions" label="English captions" srclang="en" src="videos/video-1-2.vtt" default>
+            Your browser does not support the HTML5 video element. Captions and a transcript are provided.
+          </video>
+          <p id="vid2-desc" class="small">Duration: 12:05 — Captions provided.</p>
+        </div>
+
+        <p style="margin-top:0.5rem;">
+          <a href="videos/video-1-2.vtt" download aria-label="Download captions for Video 1.2 — Why Reproducibility Matters">Download captions (VTT)</a>
+          <span style="margin:0 0.5rem;color:var(--muted)">|</span>
+          <a href="transcripts/video-1-2.txt" aria-label="Read transcript for Video 1.2 — Why Reproducibility Matters">Read transcript (text)</a>
+        </p>
+      </article>
+
+      <!-- Video 1.3 -->
+      <article class="video-card" aria-labelledby="vid3-title">
+        <h3 id="vid3-title" class="video-title">Video 1.3 — Examples of Reproducible Workflows</h3>
+        <p class="video-description">Walkthroughs of reproducible pipelines, containerization, and provenance.</p>
+
+        <div class="video-wrap" aria-describedby="vid3-desc">
+          <video controls preload="metadata" aria-describedby="vid3-desc">
+            <source src="videos/video-1-3.mp4" type="video/mp4">
+            <track kind="captions" label="English captions" srclang="en" src="videos/video-1-3.vtt" default>
+            Your browser does not support the HTML5 video element. Captions and a transcript are provided.
+          </video>
+          <p id="vid3-desc" class="small">Duration: 15:20 — Captions provided.</p>
+        </div>
+
+        <p style="margin-top:0.5rem;">
+          <a href="videos/video-1-3.vtt" download aria-label="Download captions for Video 1.3 — Examples of Reproducible Workflows">Download captions (VTT)</a>
+          <span style="margin:0 0.5rem;color:var(--muted)">|</span>
+          <a href="transcripts/video-1-3.txt" aria-label="Read transcript for Video 1.3 — Examples of Reproducible Workflows">Read transcript (text)</a>
+        </p>
+      </article>
+
+    </section>
+
+    <section id="resources" aria-labelledby="resources-heading">
+      <h2 id="resources-heading">Readings & resources</h2>
+      <ul>
+        <li><a href="https://www.nature.com/articles/s41562-016-0021" target="_blank" rel="noopener">The Importance of Reproducible Research (Nature)</a></li>
+        <li><a href="https://doi.org/10.1038/sdata.2016.18" target="_blank" rel="noopener">Ten Simple Rules for Reproducible Computational Research</a></li>
+        <li><a href="https://www.go-fair.org/fair-principles/" target="_blank" rel="noopener">FAIR Data Principles</a></li>
+        <li><a href="https://www.software.ac.uk/resources/guides" target="_blank" rel="noopener">Software Sustainability Institute — Reproducibility Guides</a></li>
+      </ul>
+    </section>
+
+    <section id="next-steps" aria-labelledby="next-steps-heading">
+      <h2 id="next-steps-heading">Next steps</h2>
+      <p>After completing this module, continue to <a href="../module-2/" aria-label="Go to Module 2 — Replicability in Bioinformatics">Module 2: Replicability in Bioinformatics</a>.</p>
+      <p class="small">If you encounter accessibility issues with any resource (captions, transcripts, or navigation), please contact the project team via the Accessibility Statement linked below.</p>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <p class="small">
+      Accessibility: This site aims to meet <strong>WCAG 2.1 Level AA</strong>. All videos include captions and transcripts; captions are provided as WebVTT files (.vtt). If you need an alternative format or find an accessibility issue, please see our <a href="/accessibility/" aria-label="Accessibility statement for E-PACERR">Accessibility Statement</a>.
+    </p>
+    <p class="small">© E-PACERR — University of Nebraska at Omaha</p>
+  </footer>
+</body>
+</html>
