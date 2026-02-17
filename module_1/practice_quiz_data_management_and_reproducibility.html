@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Practice Quiz: Data Management and Reproducibility</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    :root{
+      --text:#111;
+      --muted:#555;
+      --link:#003366;
+      --border:#e5e7eb;
+      --focus:#ffbf47;
+      --bg:#fff;
+      --card:#fafafa;
+      --ok:#0b6b2f;
+      --bad:#8a1f11;
+    }
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      line-height:1.6;
+      color:var(--text);
+      background:var(--bg);
+    }
+    header, main, footer{
+      max-width:960px;
+      margin:auto;
+      padding:1.5rem 1rem;
+    }
+    header{border-bottom:2px solid var(--border);}
+    footer{border-top:1px solid var(--border); color:var(--muted); font-size:0.95rem; margin-top:2rem;}
+    h1{margin:0 0 0.25rem 0;}
+    h2{margin-top:2rem;}
+    a{color:var(--link);}
+    a:focus, button:focus, input:focus{
+      outline:3px solid var(--focus);
+      outline-offset:2px;
+    }
+
+    /* Skip link */
+    .skip-link{
+      position:absolute; left:-999px; top:auto;
+      width:1px; height:1px; overflow:hidden;
+    }
+    .skip-link:focus{
+      left:1rem; top:1rem; width:auto; height:auto;
+      padding:.5rem .75rem; background:#000; color:#fff; z-index:1000;
+    }
+
+    .card{
+      margin-top:1rem;
+      padding:1rem;
+      border:1px solid var(--border);
+      border-radius:10px;
+      background:var(--card);
+    }
+    .small{color:var(--muted); font-size:0.95rem;}
+    .controls{
+      display:flex;
+      gap:.75rem;
+      flex-wrap:wrap;
+      margin-top:1rem;
+    }
+    button{
+      border:1px solid var(--border);
+      background:#fff;
+      border-radius:10px;
+      padding:.6rem .9rem;
+      cursor:pointer;
+      font:inherit;
+    }
+    button.primary{
+      background:var(--link);
+      color:#fff;
+      border-color:var(--link);
+    }
+
+    fieldset{
+      border:1px solid var(--border);
+      border-radius:10px;
+      padding:1rem;
+      background:#fff;
+      margin:1rem 0;
+    }
+    legend{
+      font-weight:700;
+      padding:0 .25rem;
+    }
+    .choices{margin-top:.75rem;}
+    .choice{
+      display:flex;
+      align-items:flex-start;
+      gap:.5rem;
+      padding:.4rem .5rem;
+      border-radius:8px;
+    }
+    .choice input{margin-top:.25rem;}
+    .choice label{display:block;}
+    .feedback{
+      margin-top:.75rem;
+      padding:.75rem;
+      border-left:6px solid var(--border);
+      background:#fcfcfc;
+    }
+    .feedback[hidden]{display:none;}
+    .feedback.ok{border-left-color:var(--ok);}
+    .feedback.bad{border-left-color:var(--bad);}
+    .scorebox{
+      margin-top:1rem;
+      padding:1rem;
+      border:1px solid var(--border);
+      border-radius:10px;
+      background:#fff;
+    }
+    .scoreline{font-weight:700;}
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header>
+    <h1>Practice Quiz: Data Management and Reproducibility</h1>
+    <p class="small">
+      Answer the questions below, then select <strong>Check answers</strong> to see feedback.
+    </p>
+    <p class="small">
+      <a href="https://kmcooper.github.io/E-PACERR-Enhancing-Responsible-Bioinformatics-Research/">← Back to all modules</a>
+    </p>
+  </header>
+
+  <main id="main-content">
+    <section aria-labelledby="bg-heading">
+      <h2 id="bg-heading">Background</h2>
+
+      <div class="card" aria-labelledby="bg1">
+        <h3 id="bg1">Data Management and Reproducibility</h3>
+        <p>
+          In the context of bioinformatics and related areas of research, data management can be described as the plan or approaches used to manage one's data throughout its lifecycle. In a well planned experiment, initiative, or effort, planning for the management of data should occur well before any data is ever collected! Data management for a project is closely linked to the <b>biomedical data lifecycle</b>:
+          <br>
+          <img src="https://datamanagement.hms.harvard.edu/sites/default/files/assets/Images/RDM-lifecycle-2tier-v5.png" alt="HTML tutorial" style="width:550px;height:550px;">
+          <p class="small">
+          Source: 
+          <a href="https://datamanagement.hms.harvard.edu/plan-design/biomedical-data-lifecycle">Longwood Research Data Management, Harvard University</a>
+          </p>
+          <br>
+          Good data management practice supports reproducibility by making it easier for others (and your future self)
+          to understand what data were collected, how they were processed, and how results were produced.
+        </p>
+        <p class="small">
+          Tip: Data management planning should happen early—before data collection begins—so workflows, storage,
+          documentation, and sharing expectations are clear.
+        </p>
+      </div>
+      <div class="card" aria-labelledby="bg1">
+        <h3 id="bg1">A Brief Overview of Steps in The Biomedical Data Lifecycle</h3>
+        <p>
+        Material for this page was sourced from
+          <a href="https://datamanagement.hms.harvard.edu/plan-design/biomedical-data-lifecycle">the Longwood Research Data Management, Harvard University</a>. Please visit their website for additional information, resources, and updates.
+          </p>
+          <ol>  
+          
+      <h4>Plan and Design</h4>
+      Before you start a scientific experience or project, you must plan and design your approach. Will everything go as planned, always? No! However, planning your approach will ensure that the idea in your mind fits the timeframe, scope, and feasibility. Essentially, you are ensuring that your project can be reasonably completed in the time and resources you have available. A good project plan will build in sufficient time and resources dedicated to effective data management.
+            <br><br>
+          
+          In this stage, planning for a project, initiative, or effort occur, usually alongside design of a data management plan. Many institutions such as the National Institutes of Health (NIH) are now requiring submission of a Data Management Plan with research grants. (<a href="https://grants.nih.gov/policy-and-compliance/policy-topics/sharing-policies/dms/writing-dms-plan">Click here to view the Data Management and Sharing Plan page from the NIH.</a>) The <b>data management plan</b>, to be discussed in later modules, is a well-thought out plan for <i>who will manage the data, where it will be stored and analyzed, when it will be collected and for how long, why it is being collected or appropriate for collection, what types of data will be collected and what types of tools will be used to manage, store, and analyze it, and how the data will be used</i>.  
+        <h4>Collect and Create</h4>
+        Consider what is needed to collect your data, including software, hardware, and what kind of training collaborators on your project will need. Consider how the data will be named in a way that makes it easy to find and efficient to store, search, and analyze when you reach the next step. Much like an old-fashioned lab notebook, many folks in bioinformatics use a digital lab notebook, software, or some other type of tool to detail their data collection details to ensure transparency.
+        
+        <h4>Analyze and Collaborate </h4>
+        In this stage, especially in bioinformatics, it is important for researchers and trainees to understand the reproducibility of their workflow or pipeline. Is your analysis being performed on a laptop or a high performance computing system? What requirements or dependencies are required for your analysis to run? Are you using a commercial product or an open source software? Is it a well supported and documented tool that is popular in your community, or is it a one-off script written 5 years ago by a student who has now graduated? Who has helped write this code, and are you appropriately citing all the packages and libraries used in your work?  All of these questions and more should play into how you document your bioinformatics analysis. Again - much like an old-fashioned lab notebook - many folks in bioinformatics use a digital record of their analyses to ensure transparency and reproducibility. This includes a documented README file, and where appropriate, an INSTALL file, TEST file, LICENSE file, use of a style guide for code, and use of commenting in one's code.
+        
+        <h4>Evaluate and Archive</h4>
+        Consider where you will need to store your data, for how long, and how frequently you will need to access it. Do you need a HIPAA-compliant storage asset? FERPA-compliance? Are there any data security issues that need to be considered? Additionally, storage space and upload/download time need to be considered. Relatively large datasets (think 1Tb or bigger) might require purchase of longer term storage options than are provided by your institution or university. Hard drives are easily lost and can be physically corrupted by water and age. Use of cloud based servers, when appropriate, are a better way to protect the redundancy of your data against decay and loss. 
+            <br><br>
+            This step is critical but can be overlooked, especially in when focusing on publication and dissemination! Consider where to store your data long term, or where to archive it! Is this at your institution, or should you pay to have it archived elsewhere? 
+        <h4>Share and Disseminate</h4>
+        Does your funding agreement require you to submit your data to a public repository? Sharing your data publicly, when possible, helps science by allowing others to re-use your data and replicate your analyses using new tools. There are studies that demonstrate papers sharing data have a higher citation rate than papers that do not. Other items to consider is where and how to disseminate your work - at a conference, as a pre-print, and/or in a journal? Where possible, reproducibile scholarly works should be shared as open access with licensing detailing how the work can be used; sometimes funders such as the NIH and NSF require work to be shared as open access.
+        
+        <h4>Publish and Reuse</h4>
+        This is typically the final stage of the data lifecycle in an effort, initiative, or project. Ensuring "loose ends" are wrapped up means reviewing your product(s) to ensure access, reproducibility, and availability of your code. Is there a visible point of contact on your code if you have it? Is there designated coordinator or leader who will be the point of contact for your work? Who will handle data or code requests in the future - 1 year, 5 years, 10 years down the road?
+          </ol>  
+        </p>
+        <p class="small">
+          Tip: Data management planning should happen early—before data collection begins—so workflows, storage,
+          documentation, and sharing expectations are clear.
+        </p>
+      </div>
+    </section>
+
+    <section aria-labelledby="quiz-heading">
+      <h2 id="quiz-heading">Quiz Questions</h2>
+
+      <form id="quiz-form" novalidate>
+        <!-- Q1 -->
+        <fieldset class="q" data-correct="q1-a2">
+          <legend>1) During which stage of the data lifecycle should a data management plan be designed?</legend>
+
+          <div class="choices" role="radiogroup" aria-describedby="q1-help">
+            <p id="q1-help" class="small">Select one answer.</p>
+
+            <div class="choice">
+              <input type="radio" id="q1-a1" name="q1" value="q1-a1">
+              <label for="q1-a1">plan and design</label>
+            </div>
+
+            <div class="choice">
+              <input type="radio" id="q1-a2" name="q1" value="q1-a2">
+              <label for="q1-a2">collect and create</label>
+            </div>
+
+            <div class="choice">
+              <input type="radio" id="q1-a3" name="q1" value="q1-a3">
+              <label for="q1-a3">store and manage</label>
+            </div>
+
+            <div class="choice">
+              <input type="radio" id="q1-a4" name="q1" value="q1-a4">
+              <label for="q1-a4">evaluate and archive</label>
+            </div>
+
+            <div class="choice">
+              <input type="radio" id="q1-a5" name="q1" value="q1-a5">
+              <label for="q1-a5">share and disseminate</label>
+            </div>
+          </div>
+
+          <div class="feedback" id="q1-feedback" role="status" aria-live="polite" hidden></div>
+        </fieldset>
+
+        <!-- Q2 -->
+        <fieldset class="q" data-correct="q2-a5">
+          <legend>2) When should data be shared and disseminated?</legend>
+
+          <div class="choices" role="radiogroup" aria-describedby="q2-help">
+            <p id="q2-help" class="small">Select one answer.</p>
+
+            <div class="choice">
+              <input type="radio" id="q2-a1" name="q2" value="q2-a1">
+              <label for="q2-a1">plan and design</label>
+            </div>
+
+            <div class="choice">
+              <input type="radio" id="q2-a2" name="q2" value="q2-a2">
+              <label for="q2-a2">collect and create</label>
+            </div>
+
+            <div class="choice">
+              <input type="radio" id="q2-a3" name="q2" value="q2-a3">
+              <label for="q2-a3">store and manage</label>
+            </div>
+
+            <div class="choice">
+              <input type="radio" id="q2-a4" name="q2" value="q2-a4">
+              <label for="q2-a4">evaluate and archive</label>
+            </div>
+
+            <div class="choice">
+              <input type="radio" id="q2-a5" name="q2" value="q2-a5">
+              <label for="q2-a5">share and disseminate</label>
+            </div>
+          </div>
+
+          <div class="feedback" id="q2-feedback" role="status" aria-live="polite" hidden></div>
+        </fieldset>
+
+        <!-- Q3 -->
+        <fieldset class="q" data-correct="q3-a1">
+          <legend>3) True or False: Having a data management plan designed before data collection begins is considered best practice.</legend>
+
+          <div class="choices" role="radiogroup" aria-describedby="q3-help">
+            <p id="q3-help" class="small">Select one answer.</p>
+
+            <div class="choice">
+              <input type="radio" id="q3-a1" name="q3" value="q3-a1">
+              <label for="q3-a1">True</label>
+            </div>
+
+            <div class="choice">
+              <input type="radio" id="q3-a2" name="q3" value="q3-a2">
+              <label for="q3-a2">False</label>
+            </div>
+          </div>
+
+          <div class="feedback" id="q3-feedback" role="status" aria-live="polite" hidden></div>
+        </fieldset>
+
+        <div class="controls">
+          <button type="button" class="primary" id="check-btn">Check answers</button>
+          <button type="reset" id="reset-btn">Reset</button>
+        </div>
+
+        <div class="scorebox" aria-live="polite" role="status" id="scorebox" hidden>
+          <p class="scoreline" id="scoreline"></p>
+          <p class="small" id="scorehint"></p>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      Accessibility: This page is designed to support <strong>WCAG 2.1 Level AA</strong> patterns
+      (labels, keyboard access, visible focus, and live feedback regions).
+    </p>
+    <p>© E-PACERR — University of Nebraska at Omaha</p>
+  </footer>
+
+  <script>
+    (function () {
+      const FEEDBACK = {
+        // Q1
+        "q1-a1": "Not quite. A data management plan is ideally created before data collection starts, but this question is asking which lifecycle stage it is designed for in relation to data work beginning.",
+        "q1-a2": "Correct. A data management plan should be designed as you begin collecting/creating data so you have procedures in place from the start.",
+        "q1-a3": "Close, but by the time you are storing/managing data, the plan should already be guiding how you organize, document, and back up information.",
+        "q1-a4": "Evaluate/archive happens later, after data have been produced and used. Planning should come earlier.",
+        "q1-a5": "Sharing is important, but a plan should exist long before you reach dissemination.",
+
+        // Q2
+        "q2-a1": "Not quite. Planning is where you decide how (and where) you will share, but the sharing itself happens later.",
+        "q2-a2": "Not quite. Collecting/creating is early; you may prepare for sharing here, but dissemination is typically a later stage.",
+        "q2-a3": "Not quite. Storage/management supports sharing, but it isn’t the dissemination stage.",
+        "q2-a4": "Close, but archiving is about long-term preservation. Sharing/dissemination is the stage focused on making data available to others.",
+        "q2-a5": "Correct. Data are shared and disseminated during the sharing/dissemination stage of the lifecycle.",
+
+        // Q3
+        "q3-a1": "Correct. Designing a data management plan before data collection begins is widely considered best practice because it prevents confusion and helps ensure consistent, reproducible procedures.",
+        "q3-a2": "Not quite. Best practice is to have the data management plan in place before collecting data so documentation and processes are consistent from the start."
+      };
+
+      function getSelectedValue(form, name) {
+        const checked = form.querySelector(`input[name="${name}"]:checked`);
+        return checked ? checked.value : null;
+      }
+
+      function setFeedback(el, isCorrect, message) {
+        el.hidden = false;
+        el.classList.remove("ok", "bad");
+        el.classList.add(isCorrect ? "ok" : "bad");
+        el.innerHTML = `<strong>${isCorrect ? "Correct." : "Not quite."}</strong> ${message}`;
+      }
+
+      const form = document.getElementById("quiz-form");
+      const checkBtn = document.getElementById("check-btn");
+      const resetBtn = document.getElementById("reset-btn");
+      const scorebox = document.getElementById("scorebox");
+      const scoreline = document.getElementById("scoreline");
+      const scorehint = document.getElementById("scorehint");
+
+      checkBtn.addEventListener("click", function () {
+        const questions = Array.from(form.querySelectorAll("fieldset.q"));
+        let correctCount = 0;
+        let answeredCount = 0;
+
+        questions.forEach((fs, idx) => {
+          const qNum = idx + 1;
+          const qName = "q" + qNum;
+          const correctId = fs.getAttribute("data-correct");
+          const chosen = getSelectedValue(form, qName);
+          const fb = document.getElementById(`${qName}-feedback`);
+
+          if (!chosen) {
+            fb.hidden = false;
+            fb.classList.remove("ok", "bad");
+            fb.classList.add("bad");
+            fb.innerHTML = `<strong>Missing answer.</strong> Please select an option for Question ${qNum}.`;
+            return;
+          }
+
+          answeredCount += 1;
+          const isCorrect = (chosen === correctId);
+          if (isCorrect) correctCount += 1;
+
+          const message = FEEDBACK[chosen] || "Feedback not available for this option.";
+          setFeedback(fb, isCorrect, message);
+        });
+
+        scorebox.hidden = false;
+        scoreline.textContent = `Score: ${correctCount} / ${questions.length}`;
+        scorehint.textContent = (answeredCount < questions.length)
+          ? "Answer all questions to get a complete score."
+          : "Review the feedback above to strengthen understanding.";
+        scorebox.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+
+      resetBtn.addEventListener("click", function () {
+        const feedbackEls = Array.from(document.querySelectorAll(".feedback"));
+        feedbackEls.forEach(el => {
+          el.hidden = true;
+          el.classList.remove("ok", "bad");
+          el.textContent = "";
+        });
+        scorebox.hidden = true;
+        scoreline.textContent = "";
+        scorehint.textContent = "";
+      });
+    })();
+  </script>
+</body>
+</html>
