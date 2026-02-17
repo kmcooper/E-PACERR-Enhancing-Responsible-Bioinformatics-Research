@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Activity: Data Availability and Access</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Reading: The Scientific Method and Reproducibility (Module 1)" />
+
+  <style>
+    :root {
+      --text: #111;
+      --muted: #555;
+      --link: #003366;
+      --border: #e5e7eb;
+      --focus: #ffbf47;
+      --bg-card: #fafafa;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background: #fff;
+    }
+
+    /* Skip link */
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .skip-link:focus {
+      left: 1rem;
+      top: 1rem;
+      width: auto;
+      height: auto;
+      padding: 0.5rem 0.75rem;
+      background: #000;
+      color: #fff;
+      z-index: 1000;
+    }
+
+    header, main, footer {
+      max-width: 960px;
+      margin: auto;
+      padding: 1.5rem 1rem;
+    }
+
+    header {
+      border-bottom: 2px solid var(--border);
+    }
+
+    h1 {
+      margin: 0 0 0.5rem 0;
+      font-size: 2rem;
+      line-height: 1.2;
+    }
+
+    h2 {
+      margin-top: 2rem;
+      line-height: 1.25;
+    }
+
+    p { margin: 0.75rem 0; }
+
+    a { color: var(--link); }
+    a:focus {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+    }
+
+    .reading-card {
+      margin-top: 1rem;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg-card);
+    }
+
+    .small {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    ol { padding-left: 1.25rem; }
+    li { margin: 0.5rem 0; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header>
+    <h1>Data Availability and Access</h1>
+    <p>
+      <a href="./">← Back to Module 1</a>
+      <span class="small" aria-hidden="true"> &nbsp;|&nbsp; </span>
+      <a href="../">Back to Modules</a>
+    </p>
+  </header>
+
+  <main id="main-content">
+    <article class="reading-card" aria-labelledby="reading-title">
+      <h2 id="reading-title">Overview</h2>
+
+      <p>
+        The objective of this activity is to reflect the impacts of data sharing on reproducibility and replicability in science. 
+      </p>
+
+      <h2>Instructions</h2>
+      <p>
+        PubMed is an online repository of over 34 million citations for biomedical literature from MEDLINE, life science journals, and online books. It is a useful resource for researchers (and the public!) to identify peer-reviewed and trusted research on a given biomedical topic. 
+        <br><br>
+        Go to PubMed at <a href"https://pubmed.ncbi.nlm.nih.gov/">https://pubmed.ncbi.nlm.nih.gov/</a> and search for 3-4 <b>research </b>papers in your area of interest (avoiding review articles or comments/editorials!) . 
+        <br><br>
+        Skim them over, then consider the following questions:
+        <ol>
+            <li>Do the papers you selected have a data availability statement? If so, was it easy to find?</li>
+            <li>If the data is available for the paper, does the paper provide a working link or means to access that data? Where is it stored?</li>
+            <li>If the data is available for the paper, is there a user agreement or data use agreement easily findable, or even present?</li>
+            <li>If the data is not available for the paper, would you consider the work reproducible?</li>
+        </ol>
+    
+        Use the box below to explain your reflections on data availability on existing literature in your topic of interest. <b> The content in this page will not be saved, it is simply a blank space for you to responsd.</b> If you want to save your notes for this page, please copy+paste them into your preferred information management system.  in the text box provided.  
+      </p>
+        <label for="notes"></label><br>
+        <textarea id="notes" name="notes" rows="10" cols="80"
+        placeholder="Type your notes here..."></textarea>
+        <p class="small">Notes are not saved. Refreshing or leaving the page will clear them.</p>
+
+
+  </main>
+
+  <footer>
+    <p>
+      Accessibility: This page is designed to support <strong>WCAG&nbsp;2.1 Level&nbsp;AA</strong> (semantic headings,
+      keyboard navigation, and clear structure). If you encounter accessibility barriers, please contact the project team.
+    </p>
+    <p>© E-PACERR — University of Nebraska at Omaha</p>
+  </footer>
+</body>
+</html>
