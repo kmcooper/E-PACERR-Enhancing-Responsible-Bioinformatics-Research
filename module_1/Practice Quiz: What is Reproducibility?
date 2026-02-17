@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Practice Quiz: What is Reproducibility?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    :root{
+      --text:#111;
+      --muted:#555;
+      --link:#003366;
+      --border:#e5e7eb;
+      --focus:#ffbf47;
+      --bg:#fff;
+      --card:#fafafa;
+      --ok:#0b6b2f;
+      --bad:#8a1f11;
+    }
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      line-height:1.6;
+      color:var(--text);
+      background:var(--bg);
+    }
+    header, main, footer{
+      max-width:960px;
+      margin:auto;
+      padding:1.5rem 1rem;
+    }
+    header{border-bottom:2px solid var(--border);}
+    footer{border-top:1px solid var(--border); color:var(--muted); font-size:0.95rem; margin-top:2rem;}
+    h1{margin:0 0 0.25rem 0;}
+    h2{margin-top:2rem;}
+    a{color:var(--link);}
+    a:focus, button:focus, input:focus{
+      outline:3px solid var(--focus);
+      outline-offset:2px;
+    }
+
+    /* Skip link */
+    .skip-link{
+      position:absolute; left:-999px; top:auto;
+      width:1px; height:1px; overflow:hidden;
+    }
+    .skip-link:focus{
+      left:1rem; top:1rem; width:auto; height:auto;
+      padding:.5rem .75rem; background:#000; color:#fff; z-index:1000;
+    }
+
+    .card{
+      margin-top:1rem;
+      padding:1rem;
+      border:1px solid var(--border);
+      border-radius:10px;
+      background:var(--card);
+    }
+    .small{color:var(--muted); font-size:0.95rem;}
+    .controls{
+      display:flex;
+      gap:.75rem;
+      flex-wrap:wrap;
+      margin-top:1rem;
+    }
+    button{
+      border:1px solid var(--border);
+      background:#fff;
+      border-radius:10px;
+      padding:.6rem .9rem;
+      cursor:pointer;
+      font:inherit;
+    }
+    button.primary{
+      background:var(--link);
+      color:#fff;
+      border-color:var(--link);
+    }
+
+    fieldset{
+      border:1px solid var(--border);
+      border-radius:10px;
+      padding:1rem;
+      background:#fff;
+      margin:1rem 0;
+    }
+    legend{
+      font-weight:700;
+      padding:0 .25rem;
+    }
+    .choices{margin-top:.75rem;}
+    .choice{
+      display:flex;
+      align-items:flex-start;
+      gap:.5rem;
+      padding:.4rem .5rem;
+      border-radius:8px;
+    }
+    .choice input{margin-top:.25rem;}
+    .choice label{display:block;}
+    .feedback{
+      margin-top:.75rem;
+      padding:.75rem;
+      border-left:6px solid var(--border);
+      background:#fcfcfc;
+    }
+    .feedback[hidden]{display:none;}
+    .feedback.ok{border-left-color:var(--ok);}
+    .feedback.bad{border-left-color:var(--bad);}
+    .scorebox{
+      margin-top:1rem;
+      padding:1rem;
+      border:1px solid var(--border);
+      border-radius:10px;
+      background:#fff;
+    }
+    .scoreline{font-weight:700;}
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header>
+    <h1>Practice Quiz: What is Reproducibility?</h1>
+    <p class="small">
+      Answer the questions below, then select <strong>Check answers</strong> to see feedback.
+    </p>
+    <p class="small">
+      <a href="https://kmcooper.github.io/E-PACERR-Enhancing-Responsible-Bioinformatics-Research/">← Back to all modules</a>
+    </p>
+  </header>
+
+  <main id="main-content">
+    <section aria-labelledby="bg-heading">
+      <h2 id="bg-heading">Background</h2>
+
+      <div class="card" aria-labelledby="bg1">
+        <h3 id="bg1">Reproducibility in Science</h3>
+        <p>
+          How do we define Reproducibility in Science? According to The National Academies of Sciences,
+          Engineering, and Medicine, reproducibility in science can be defined as “obtaining consistent results
+          using the same data and code as the original study”.
+        </p>
+        <p>
+          In essence, this means that a scientist should be able to access an experiment’s methods, data (if provided),
+          and code (if provided), and then return the same results as the original study or publication using the same
+          data and same analyses.
+        </p>
+        <p>
+          Generally, when we refer to reproducibility, we are referring to the ability of one group to reproduce the work
+          of another research group. However, it is possible and encouraged for scientists to perform internal reproducibility
+          checks to see if their methods, code, and data (where appropriate) are reproducible.
+        </p>
+      </div>
+
+      <div class="card" aria-labelledby="bg2">
+        <h3 id="bg2">Replicability</h3>
+        <p>
+          Replicability is a concept that is adjacent to reproducibility. In our context, it means
+          “obtaining consistent results across studies aimed at answering the same scientific question using new data
+          or other new computational methods,” according to The National Academies of Sciences, Engineering, and Medicine.
+        </p>
+        <p>
+          In essence, this means that a scientist with access to an experiment’s methods should be able to run existing
+          methods or analyses on a new dataset.
+        </p>
+      </div>
+
+      <div class="card" aria-labelledby="bg3">
+        <h3 id="bg3">Computational Reproducibility</h3>
+        <p>
+          Sometimes reproducibility can be further specified. For example, computational reproducibility was generally
+          defined in a 2009 article by Dr. David Donoho et al. as the provision of data and code to allow others to
+          reproduce results.
+        </p>
+      </div>
+    </section>
+
+    <section aria-labelledby="quiz-heading">
+      <h2 id="quiz-heading">Quiz Questions</h2>
+
+      <form id="quiz-form" novalidate>
+        <!-- Q1 -->
+        <fieldset class="q" data-correct="q1-a2">
+          <legend>1) What is reproducibility?</legend>
+
+          <div class="choices" role="radiogroup" aria-describedby="q1-help">
+            <p id="q1-help" class="small">Select one answer.</p>
+
+            <div class="choice">
+              <input type="radio" id="q1-a1" name="q1" value="q1-a1">
+              <label for="q1-a1">reading the results of a paper and thinking critically about them</label>
+            </div>
+
+            <div class="choice">
+              <input type="radio" id="q1-a2" name="q1" value="q1-a2">
+              <label for="q1-a2">examining the consistency of results after re-running an experiment or methods</label>
+            </div>
+
+            <div class="choice">
+              <input type="radio" id="q1-a3" name="q1" value="q1-a3">
+              <label for="q1-a3">re-running an experiment in the lab to make sure you did it right</label>
+            </div>
+
+            <div class="choice">
+              <input type="radio" id="q1-a4" name="q1" value="q1-a4">
+              <label for="q1-a4">re-running an experiment using slightly different methods and conditions to determine if the results change</label>
+            </div>
+          </div>
+
+          <div class="feedback" id="q1-feedback" role="status" aria-live="polite" hidden></div>
+        </fieldset>
+
+        <!-- Q2 -->
+        <fieldset class="q" data-correct="q2-a4">
+          <legend>2) What is replicability?</legend>
+
+          <div class="choices" role="radiogroup" aria-describedby="q2-help">
+            <p id="q2-help" class="small">Select one answer.</p>
+
+            <div class="choice">
+              <input type="radio" id="q2-a1" name="q2" value="q2-a1">
+              <label for="q2-a1">reading the results of a paper and thinking critically about them</label>
+            </div>
+
+            <div class="choice">
+              <input type="radio" id="q2-a2" name="q2" value="q2-a2">
+              <label for="q2-a2">examining the consistency of results after re-running an experiment or methods</label>
+            </div>
+
+            <div class="choice">
+              <input type="radio" id="q2-a3" name="q2" value="q2-a3">
+              <label for="q2-a3">re-running an experiment under the exact same conditions to make sure you did it right</label>
+            </div>
+
+            <div class="choice">
+              <input type="radio" id="q2-a4" name="q2" value="q2-a4">
+              <label for="q2-a4">re-running an experiment using different conditions to determine if the results change</label>
+            </div>
+          </div>
+
+          <div class="feedback" id="q2-feedback" role="status" aria-live="polite" hidden></div>
+        </fieldset>
+
+        <!-- Q3 -->
+        <fieldset class="q" data-correct="q3-a3">
+          <legend>3) Which of the following example scenarios would <em>not</em> qualify as a computational reproducibility study?</legend>
+
+          <div class="choices" role="radiogroup" aria-describedby="q3-help">
+            <p id="q3-help" class="small">Select one answer.</p>
+
+            <div class="choice">
+              <input type="radio" id="q3-a1" name="q3" value="q3-a1">
+              <label for="q3-a1">A different research group re-running a published analysis using the original dataset and code (if provided) to see if they obtain the same results</label>
+            </div>
+
+            <div class="choice">
+              <input type="radio" id="q3-a2" name="q3" value="q3-a2">
+              <label for="q3-a2">A scientist re-analyzing an original dataset using the same computational steps described in a paper to confirm the reported findings</label>
+            </div>
+
+            <div class="choice">
+              <input type="radio" id="q3-a3" name="q3" value="q3-a3">
+              <label for="q3-a3">
+                A student re-generating a Western blot figure by re-running a gel electrophoresis experiment and then staining and visualizing the bands
+              </label>
+            </div>
+
+            <div class="choice">
+              <input type="radio" id="q3-a4" name="q3" value="q3-a4">
+              <label for="q3-a4">A research group running the same computational pipeline on the same input files to verify they can reproduce identical outputs</label>
+            </div>
+          </div>
+
+          <div class="feedback" id="q3-feedback" role="status" aria-live="polite" hidden></div>
+        </fieldset>
+
+        <div class="controls">
+          <button type="button" class="primary" id="check-btn">Check answers</button>
+          <button type="reset" id="reset-btn">Reset</button>
+        </div>
+
+        <div class="scorebox" aria-live="polite" role="status" id="scorebox" hidden>
+          <p class="scoreline" id="scoreline"></p>
+          <p class="small" id="scorehint"></p>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      Accessibility: This page is designed to support <strong>WCAG 2.1 Level AA</strong> patterns
+      (labels, keyboard access, visible focus, and live feedback regions).
+    </p>
+    <p>© E-PACERR — University of Nebraska at Omaha</p>
+  </footer>
+
+  <script>
+    (function () {
+      const FEEDBACK = {
+        "q1-a1": "Reading the results of a paper and thinking critically about them is not reproducibility. Critical analysis can lead to a reproducibility study, but reproducibility requires taking action to verify results.",
+        "q1-a2": "Correct. Examining consistency of results after re-running an experiment or method is reproducibility. Internal checks can be good practice and support future reproducibility by others.",
+        "q1-a3": "Re-running an experiment to make sure you did it right can be a validation step, but it is not typically framed as reproducing another group’s published work.",
+        "q1-a4": "Re-running an experiment with different methods/conditions to see whether results change aligns more with replicability than reproducibility.",
+
+        "q2-a1": "Critical reading is valuable, but replicability involves re-running studies (often with new data or changed conditions/methods).",
+        "q2-a2": "This describes reproducibility (same data/methods), not replicability (new data and/or new methods/conditions).",
+        "q2-a3": "Running the same conditions is closer to reproducibility/validation than replicability.",
+        "q2-a4": "Correct. Replicability involves testing whether findings hold under different conditions and/or with new data.",
+
+        "q3-a1": "This is a strong example of computational reproducibility (re-running analysis with original data/code to verify identical results).",
+        "q3-a2": "This aligns with computational reproducibility if the same data and computational steps are used to confirm reported findings.",
+        "q3-a3": "Correct. Re-generating a Western blot via wet-lab procedures is not a computational reproducibility study.",
+        "q3-a4": "This is computational reproducibility when the same pipeline and same input files produce the same outputs."
+      };
+
+      function getSelectedValue(form, name) {
+        const checked = form.querySelector(`input[name="${name}"]:checked`);
+        return checked ? checked.value : null;
+      }
+
+      function setFeedback(el, isCorrect, message) {
+        el.hidden = false;
+        el.classList.remove("ok", "bad");
+        el.classList.add(isCorrect ? "ok" : "bad");
+        el.innerHTML = `<strong>${isCorrect ? "Correct." : "Not quite."}</strong> ${message}`;
+      }
+
+      const form = document.getElementById("quiz-form");
+      const checkBtn = document.getElementById("check-btn");
+      const scorebox = document.getElementById("scorebox");
+      const scoreline = document.getElementById("scoreline");
+      const scorehint = document.getElementById("scorehint");
+
+      checkBtn.addEventListener("click", function () {
+        const questions = Array.from(form.querySelectorAll("fieldset.q"));
+        let correctCount = 0;
+        let answeredCount = 0;
+
+        questions.forEach((fs, idx) => {
+          const qNum = idx + 1;
+          const qName = "q" + qNum;
+          const correctId = fs.getAttribute("data-correct");
+          const chosen = getSelectedValue(form, qName);
+          const fb = document.getElementById(`${qName}-feedback`);
+
+          if (!chosen) {
+            fb.hidden = false;
+            fb.classList.remove("ok", "bad");
+            fb.classList.add("bad");
+            fb.innerHTML = "<strong>Please choose an answer.</strong>";
+            return;
+          }
+
+          answeredCount++;
+          const isCorrect = (chosen === correctId);
+          if (isCorrect) correctCount++;
+
+          const msg = FEEDBACK[chosen] || "Feedback unavailable.";
+          setFeedback(fb, isCorrect, msg);
+        });
+
+        scorebox.hidden = false;
+        scoreline.textContent = `Score: ${correctCount} / ${questions.length}`;
+        scorehint.textContent =
+          answeredCount < questions.length
+            ? "Finish any unanswered questions and select “Check answers” again."
+            : "Nice work—review the feedback to reinforce key differences between reproducibility and replicability.";
+
+        scorebox.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+
+      form.addEventListener("reset", function () {
+        const feedbacks = form.querySelectorAll(".feedback");
+        feedbacks.forEach(fb => { fb.hidden = true; fb.classList.remove("ok", "bad"); fb.textContent = ""; });
+        scorebox.hidden = true;
+        scoreline.textContent = "";
+        scorehint.textContent = "";
+      });
+    })();
+  </script>
+</body>
+</html>
