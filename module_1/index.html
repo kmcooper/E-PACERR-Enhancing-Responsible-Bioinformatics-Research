@@ -25,11 +25,9 @@
       background: #fff;
     }
 
-    /* Skip link */
     .skip-link {
       position: absolute;
       left: -999px;
-      top: auto;
       width: 1px;
       height: 1px;
       overflow: hidden;
@@ -76,7 +74,7 @@
 
     .video-title {
       font-weight: 600;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.5rem;
     }
 
     .small {
@@ -84,7 +82,22 @@
       color: var(--muted);
     }
 
-    /* Responsive iframe wrapper */
+    /* Expandable video styling */
+    details {
+      margin-top: 0.5rem;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 600;
+      padding: 0.5rem 0;
+    }
+
+    summary:focus {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+    }
+
     .video-wrapper {
       position: relative;
       padding-bottom: 56.25%;
@@ -92,7 +105,7 @@
       overflow: hidden;
       border-radius: 6px;
       background: #000;
-      margin-top: 0.5rem;
+      margin-top: 0.75rem;
     }
 
     .video-wrapper iframe {
@@ -119,154 +132,123 @@
   <header>
     <h1>Module 1: Reproducibility in Bioinformatics</h1>
     <p class="small">
-      This module introduces the foundational concepts of reproducibility in bioinformatics research,
-      including why reproducible practices matter and how they support scientific rigor.
+      This module introduces the foundational concepts of reproducibility in bioinformatics research.
     </p>
     <p>
-      <a href="https://kmcooper.github.io/E-PACERR-Enhancing-Responsible-Bioinformatics-Research/">← Back to all modules</a>
+      <a href="https://kmcooper.github.io/E-PACERR-Enhancing-Responsible-Bioinformatics-Research/">
+        ← Back to all modules
+      </a>
     </p>
   </header>
 
   <main id="main-content">
-    <section aria-labelledby="objectives-heading">
-      <h2 id="objectives-heading">Learning Objectives</h2>
+
+    <section>
+      <h2>Learning Objectives</h2>
       <ul>
         <li>Define reproducibility in the context of bioinformatics research</li>
         <li>Identify characteristics of reproducible computational workflows</li>
         <li>Recognize common barriers to reproducibility</li>
-        <li>Apply basic reproducibility best practices to a research project</li>
+        <li>Apply reproducibility best practices to a research project</li>
       </ul>
     </section>
-    
-    <!-- SECTION START-->
-    <section aria-labelledby="videos-heading">
-      <h2 id="videos-heading">Module Content</h2>
-      <article class="video-card" aria-labelledby="resource1-title">
-          <h3 id="resource1-title" class="video-title">
-              Reading: The Scientific Method and Reproducibility 
-          </h3>
+
+    <section>
+      <h2>Module Content</h2>
+
+      <!-- Reading -->
+      <article class="video-card">
+        <h3 class="video-title">
+          Reading: The Scientific Method and Reproducibility
+        </h3>
         <p>
-            <a href="https://kmcooper.github.io/E-PACERR-Enhancing-Responsible-Bioinformatics-Research/module_1/the_scientific_method_and_reproducibility.html" target="_blank" rel="noopener">
-               The Scientific Method and Reproducibility 
-            </a>
+          <a href="the_scientific_method_and_reproducibility.html">
+            The Scientific Method and Reproducibility
+          </a>
         </p>
         <p class="small">
-            Estimated reading time: 5–15     minutes.
+          Estimated reading time: 5–15 minutes.
         </p>
       </article>
-    
-      <article class="video-card" aria-labelledby="vid1-title">
-        <h3 id="vid1-title" class="video-title">
+
+      <!-- Video 1 -->
+      <article class="video-card">
+        <h3 class="video-title">
           Video: What Is Reproducibility?
         </h3>
 
-        <div class="video-wrapper" role="region" aria-label="Video player: What Is Reproducibility?">
+        <details>
+          <summary>Click to expand and watch video</summary>
 
-          <iframe
-            title="Video: What Is Reproducibility?"
-            aria-label="Video: What Is Reproducibility?"
-            src="https://unomaha.yuja.com/V/Video?v=9205527&node=39390606&a=195248441&preload=false"
-            loading="lazy"
-            allowfullscreen
-            webkitallowfullscreen
-            mozallowfullscreen>
-          </iframe>
-        </div>
+          <div class="video-wrapper">
+            <iframe
+              title="Video: What Is Reproducibility?"
+              src="https://unomaha.yuja.com/V/Video?v=9205527&node=39390606&a=195248441&preload=false"
+              loading="lazy"
+              allowfullscreen>
+            </iframe>
+          </div>
 
-        <p class="small" id="vid1-desc" style="margin-top:0.5rem;">
-          Duration: 8:22 — Captions and an interactive transcript are available within the video player.  
-        </p>
+          <p class="small">
+            Duration: 8:22 — Captions and transcript available within the player.
+          </p>
 
-        <p class="small">
-          If the embedded player does not load, you may
-          <a href="https://unomaha.yuja.com/V/Video?v=9205527&node=39390606&a=195248441" target="_blank" rel="noopener">
-            open the video directly in Yuja
-          <br>
-          <br>
-          <a href="https://uofnebraska-my.sharepoint.com/:p:/g/personal/35979329_nebraska_edu/IQCeaYHCwIDgSbK8Y7cf6w6dARmzCs7N4zY6De7pnT6TU5g?e=ftAGKr">Download the Slides for this Video</a> 
-        </p>
+          <p class="small">
+            <a href="https://unomaha.yuja.com/V/Video?v=9205527&node=39390606&a=195248441" target="_blank" rel="noopener">
+              Open directly in Yuja
+            </a>
+            |
+            <a href="https://uofnebraska-my.sharepoint.com/:p:/g/personal/35979329_nebraska_edu/IQCeaYHCwIDgSbK8Y7cf6w6dARmzCs7N4zY6De7pnT6TU5g?e=ftAGKr" target="_blank" rel="noopener">
+              Download Slides
+            </a>
+          </p>
+        </details>
       </article>
 
-  
-    </section>
-<!-- SECTION END-->
-
-<section aria-labelledby="videos-heading">
-  
-      <article class="video-card" aria-labelledby="vid1-title">
-        <h3 id="vid1-title" class="video-title">
+      <!-- Video 2 -->
+      <article class="video-card">
+        <h3 class="video-title">
           Video: What Is Replicability?
         </h3>
 
-        <div class="video-wrapper" role="region" aria-label="Video player: What Is Reproducibility?">
-          <iframe
-            title="Video: What Is Replicability?"
-            aria-label="Video: What Is Replicability"
-            src="https://unomaha.yuja.com/V/Video?v=9205527&node=39390606&a=195248441&preload=false"
-            loading="lazy"
-            allowfullscreen
-            webkitallowfullscreen
-            mozallowfullscreen>
-          </iframe>
-        </div>
+        <details>
+          <summary>Click to expand and watch video</summary>
 
-        <p class="small" id="vid1-desc" style="margin-top:0.5rem;">
-          Duration: 8:22 — Captions and an interactive transcript are available within the video player.
-        </p>
+          <div class="video-wrapper">
+            <iframe
+              title="Video: What Is Replicability?"
+              src="https://unomaha.yuja.com/V/Video?v=9205527&node=39390606&a=195248441&preload=false"
+              loading="lazy"
+              allowfullscreen>
+            </iframe>
+          </div>
 
-        <p class="small">
-          If the embedded player does not load, you may
-          <a href="https://unomaha.yuja.com/V/Video?v=9205527&node=39390606&a=195248441" target="_blank" rel="noopener">
-            open the video directly in Yuja
-          </a>.
-        </p>
+          <p class="small">
+            Duration: 8:22 — Captions and transcript available within the player.
+          </p>
+
+          <p class="small">
+            <a href="https://unomaha.yuja.com/V/Video?v=9205527&node=39390606&a=195248441" target="_blank" rel="noopener">
+              Open directly in Yuja
+            </a>
+          </p>
+        </details>
       </article>
+
     </section>
-    
-    <section aria-labelledby="resources-heading">
-      <h2 id="resources-heading">Readings & Resources</h2>
+
+    <section>
+      <h2>Readings & Resources</h2>
       <ul>
-        <li>
-          <a href="https://www.nature.com/articles/s41562-016-0021" target="_blank" rel="noopener">
-            The Importance of Reproducible Research (Nature)
-          </a>
-        </li>
-        <li>
-          <a href="https://doi.org/10.1038/sdata.2016.18" target="_blank" rel="noopener">
-            Ten Simple Rules for Reproducible Computational Research
-          </a>
-        </li>
-        <li>
-          <a href="https://www.go-fair.org/fair-principles/" target="_blank" rel="noopener">
-            FAIR Data Principles
-          </a>
-        </li>
+        <li><a href="https://www.nature.com/articles/s41562-016-0021" target="_blank" rel="noopener">The Importance of Reproducible Research (Nature)</a></li>
+        <li><a href="https://doi.org/10.1038/sdata.2016.18" target="_blank" rel="noopener">Ten Simple Rules for Reproducible Computational Research</a></li>
+        <li><a href="https://www.go-fair.org/fair-principles/" target="_blank" rel="noopener">FAIR Data Principles</a></li>
       </ul>
     </section>
 
-    <section aria-labelledby="next-heading">
-      <h2 id="next-heading">Next Steps</h2>
-      <p> <ul>
-        <li> Done with this module? <a href="https://unomaha.az1.qualtrics.com/jfe/form/SV_5je3u1Hl4cqSp5c">Please tell us what you thought! </a></li>  
-        <li> Problem with something on the site? <a href="https://unomaha.az1.qualtrics.com/jfe/form/SV_5AqZKWawUuMPjym"> Let us know. </a></li>
-        <li>Continue on to <a href="../module_2/">Module 2: Replicability in Bioinformatics</a>.</li>        
-      </ul></p>
-    </section>
-  </main>
-
-  <footer>
-    <p>
-      Accessibility: This site aims to meet <strong>WCAG&nbsp;2.1 Level&nbsp;AA</strong>.
-      All videos include captions and transcripts via the Yuja player.
-      To learn how to download a transcript from a Yuja Video, 
-      <a href="https://support.yuja.com/hc/en-us/articles/360048657534-Downloading-Notes-Resources-and-Transcripts-in-the-Lumina-Media-Player">
-        please visit the YuJa Help page.
-      </a>
-    </p>
-    <p>
-      © E-PACERR — University of Nebraska at Omaha
-    </p>
-  </footer>
-</body>
-</html>
-mo
+    <section>
+      <h2>Next Steps</h2>
+      <ul>
+        <li><a href="https://unomaha.az1.qualtrics.com/jfe/form/SV_5je3u1Hl4cqSp5c">Please tell us what you thought</a></li>
+        <li><a href="https://unomaha.az1.qualtrics.com/jfe/form/SV_5AqZKWawUuMPjym">Report a problem</a></li>
+        <li>Continue to <a href=
