@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Module 1 Quiz: Reproducibility, Sharing, and Accessibility (10 Questions)</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.5; margin: 0; padding: 0; }
+    header, main, footer { max-width: 920px; margin: 0 auto; padding: 1rem; }
+    header { padding-top: 1.5rem; }
+    .card { border: 1px solid #ddd; border-radius: 12px; padding: 1rem; margin: 1rem 0; }
+    fieldset { border: 1px solid #ddd; border-radius: 12px; padding: 1rem; }
+    legend { font-weight: 700; padding: 0 .25rem; }
+    .q { margin: 0 0 1rem; }
+    .choices { margin-top: .5rem; display: grid; gap: .5rem; }
+    .choice { display: flex; gap: .5rem; align-items: flex-start; }
+    .choice input { margin-top: .25rem; }
+    .actions { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: 1rem; }
+    button { padding: .6rem .9rem; border-radius: 10px; border: 1px solid #111; background: #111; color: #fff; cursor: pointer; }
+    button.secondary { background: #fff; color: #111; }
+    button:focus, input:focus { outline: 3px solid #6aa9ff; outline-offset: 2px; }
+    .result { padding: 1rem; border-radius: 12px; border: 2px solid #ddd; }
+    .correct { border-color: #2e7d32; }
+    .incorrect { border-color: #c62828; }
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+    }
+    .explain { margin: .5rem 0 0; }
+    .small { font-size: .95rem; color: #333; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Module 1 Quiz</h1>
+    <p class="small">
+      Beginner check-in on reproducibility, the scientific method, data/code sharing, FAIR principles,
+      and making code accessible.
+    </p>
+  </header>
+
+  <main>
+    <form id="quiz" class="card" aria-describedby="instructions">
+      <p id="instructions" class="small">
+        Choose one answer for each question. Select <strong>Grade Quiz</strong> to see your score and feedback.
+      </p>
+
+      <!-- Q1 -->
+      <fieldset class="q" aria-labelledby="q1-title">
+        <legend id="q1-title">1) In computational science, what do you need at minimum to allow others to attempt reproducibility?</legend>
+        <div class="choices" role="radiogroup" aria-label="Question 1 choices">
+          <label class="choice"><input type="radio" name="q1" value="A" /> A. Data and code</label>
+          <label class="choice"><input type="radio" name="q1" value="B" /> B. Only a summary of results</label>
+          <label class="choice"><input type="radio" name="q1" value="C" /> C. Only the methods section text</label>
+          <label class="choice"><input type="radio" name="q1" value="D" /> D. Only screenshots of the output</label>
+        </div>
+      </fieldset>
+
+      <!-- Q2 -->
+      <fieldset class="q" aria-labelledby="q2-title">
+        <legend id="q2-title">2) Reproducibility (in many scientific definitions) means obtaining consistent results using:</legend>
+        <div class="choices" role="radiogroup" aria-label="Question 2 choices">
+          <label class="choice"><input type="radio" name="q2" value="A" /> A. New data and new code</label>
+          <label class="choice"><input type="radio" name="q2" value="B" /> B. The same data and code as the original study</label>
+          <label class="choice"><input type="radio" name="q2" value="C" /> C. Any data, as long as the conclusions match</label>
+          <label class="choice"><input type="radio" name="q2" value="D" /> D. The same conclusions, even if results differ</label>
+        </div>
+      </fieldset>
+
+      <!-- Q3 -->
+      <fieldset class="q" aria-labelledby="q3-title">
+        <legend id="q3-title">3) Which of the following is a key reason to share your code?</legend>
+        <div class="choices" role="radiogroup" aria-label="Question 3 choices">
+          <label class="choice"><input type="radio" name="q3" value="A" /> A. To reduce transparency</label>
+          <label class="choice"><input type="radio" name="q3" value="B" /> B. To make it harder for others to understand your work</label>
+          <label class="choice"><input type="radio" name="q3" value="C" /> C. To enhance reproducibility, reuse, and transparency</label>
+          <label class="choice"><input type="radio" name="q3" value="D" /> D. To avoid documenting versions</label>
+        </div>
+      </fieldset>
+
+      <!-- Q4 -->
+      <fieldset class="q" aria-labelledby="q4-title">
+        <legend id="q4-title">4) FAIR stands for Findable, Accessible, Interoperable, and:</legend>
+        <div class="choices" role="radiogroup" aria-label="Question 4 choices">
+          <label class="choice"><input type="radio" name="q4" value="A" /> A. Repeatable</label>
+          <label class="choice"><input type="radio" name="q4" value="B" /> B. Reliable</label>
+          <label class="choice"><input type="radio" name="q4" value="C" /> C. Re-usable</label>
+          <label class="choice"><input type="radio" name="q4" value="D" /> D. Reproven</label>
+        </div>
+      </fieldset>
+
+      <!-- Q5 -->
+      <fieldset class="q" aria-labelledby="q5-title">
+        <legend id="q5-title">5) A good code repository commonly includes which file that explains what the code does and how to run it?</legend>
+        <div class="choices" role="radiogroup" aria-label="Question 5 choices">
+          <label class="choice"><input type="radio" name="q5" value="A" /> A. README file</label>
+          <label class="choice"><input type="radio" name="q5" value="B" /> B. Screenshot.jpg</label>
+          <label class="choice"><input type="radio" name="q5" value="C" /> C. RandomNotes.txt (required)</label>
+          <label class="choice"><input type="radio" name="q5" value="D" /> D. No documentation is needed</label>
+        </div>
+      </fieldset>
+
+      <!-- Q6 -->
+      <fieldset class="q" aria-labelledby="q6-title">
+        <legend id="q6-title">6) A LICENSE file in a code repository is mainly used to:</legend>
+        <div class="choices" role="radiogroup" aria-label="Question 6 choices">
+          <label class="choice"><input type="radio" name="q6" value="A" /> A. Hide the code from the public</label>
+          <label class="choice"><input type="radio" name="q6" value="B" /> B. State how others can legally use, modify, and share the code</label>
+          <label class="choice"><input type="radio" name="q6" value="C" /> C. Automatically run tests</label>
+          <label class="choice"><input type="radio" name="q6" value="D" /> D. Replace the README file</label>
+        </div>
+      </fieldset>
+
+      <!-- Q7 -->
+      <fieldset class="q" aria-labelledby="q7-title">
+        <legend id="q7-title">7) Which practice makes code more accessible and supports reproducibility?</legend>
+        <div class="choices" role="radiogroup" aria-label="Question 7 choices">
+          <label class="choice"><input type="radio" name="q7" value="A" /> A. Using unclear variable names like a, b, c for everything</label>
+          <label class="choice"><input type="radio" name="q7" value="B" /> B. Commenting, using a style guide, and documenting the code</label>
+          <label class="choice"><input type="radio" name="q7" value="C" /> C. Avoiding any comments so the code looks cleaner</label>
+          <label class="choice"><input type="radio" name="q7" value="D" /> D. Copying code into slides instead of a repository</label>
+        </div>
+      </fieldset>
+
+      <!-- Q8 -->
+      <fieldset class="q" aria-labelledby="q8-title">
+        <legend id="q8-title">8) Which is a “best place” commonly used to share code online?</legend>
+        <div class="choices" role="radiogroup" aria-label="Question 8 choices">
+          <label class="choice"><input type="radio" name="q8" value="A" /> A. GitHub or Bitbucket</label>
+          <label class="choice"><input type="radio" name="q8" value="B" /> B. A private folder with no access</label>
+          <label class="choice"><input type="radio" name="q8" value="C" /> C. A paper notebook only</label>
+          <label class="choice"><input type="radio" name="q8" value="D" /> D. Only inside a single email attachment forever</label>
+        </div>
+      </fieldset>
+
+      <!-- Q9 -->
+      <fieldset class="q" aria-labelledby="q9-title">
+        <legend id="q9-title">9) Why can command-line workflows be more reproducible than “point-and-click” workflows?</legend>
+        <div class="choices" role="radiogroup" aria-label="Question 9 choices">
+          <label class="choice"><input type="radio" name="q9" value="A" /> A. They can capture commands in a script and help track versions</label>
+          <label class="choice"><input type="radio" name="q9" value="B" /> B. They never require documentation</label>
+          <label class="choice"><input type="radio" name="q9" value="C" /> C. They automatically share your data publicly</label>
+          <label class="choice"><input type="radio" name="q9" value="D" /> D. They prevent anyone from re-running analyses</label>
+        </div>
+      </fieldset>
+
+      <!-- Q10 -->
+      <fieldset class="q" aria-labelledby="q10-title">
+        <legend id="q10-title">10) In the scientific method, why is “one experiment is not enough” often emphasized?</legend>
+        <div class="choices" role="radiogroup" aria-label="Question 10 choices">
+          <label class="choice"><input type="radio" name="q10" value="A" /> A. Theories and confidence emerge from multiple studies and repeated testing</label>
+          <label class="choice"><input type="radio" name="q10" value="B" /> B. It is impossible to report results from a single study</label>
+          <label class="choice"><input type="radio" name="q10" value="C" /> C. Hypotheses do not need to be testable</label>
+          <label class="choice"><input type="radio" name="q10" value="D" /> D. Data is optional if you have code</label>
+        </div>
+      </fieldset>
+
+      <div class="actions">
+        <button type="button" id="gradeBtn">Grade Quiz</button>
+        <button type="reset" class="secondary" id="resetBtn">Reset</button>
+      </div>
+
+      <div id="results" class="card" role="status" aria-live="polite" aria-atomic="true" hidden></div>
+    </form>
+
+    <section class="card" aria-label="Sources">
+      <h2 class="small">Source slides used for quiz topics</h2>
+      <ul class="small">
+        <li>Reproducibility basics and definitions</li>
+        <li>Scientific method concepts</li>
+        <li>Data availability, data/code sharing, FAIR principles</li>
+        <li>Sharing code and workflows (GitHub/Bitbucket, README/LICENSE)</li>
+        <li>Making code accessible (comments, style guides, documentation)</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="small">
+    <p>
+      Tip: If you missed a question, re-check the Module 1 slides for the topic and try again.
+    </p>
+  </footer>
+
+  <script>
+    (function () {
+      const answers = {
+        q1: "A",
+        q2: "B",
+        q3: "C",
+        q4: "C",
+        q5: "A",
+        q6: "B",
+        q7: "B",
+        q8: "A",
+        q9: "A",
+        q10: "A"
+      };
+
+      const explanations = {
+        q1: "In computational reproducibility, sharing both data and code is the minimum needed for others to attempt reproduction.",
+        q2: "A common definition is obtaining consistent results using the same data and code as the original study.",
+        q3: "Sharing improves reproducibility, reuse, transparency, and can increase impact/citations.",
+        q4: "FAIR ends with Re-usable (Findable, Accessible, Interoperable, Re-usable).",
+        q5: "A README typically describes what the project does, how to run it, and often includes contact info.",
+        q6: "A LICENSE clarifies how others are allowed to use/modify/share the code.",
+        q7: "Comments, style guides, and documentation improve readability and reuse, supporting reproducibility.",
+        q8: "GitHub and Bitbucket are common platforms for sharing code repositories.",
+        q9: "Command histories and scripts capture exact steps; point-and-click steps are harder to record precisely.",
+        q10: "Repeated testing and multiple studies across groups build confidence and scientific impact."
+      };
+
+      const quizForm = document.getElementById("quiz");
+      const resultsEl = document.getElementById("results");
+      const gradeBtn = document.getElementById("gradeBtn");
+      const resetBtn = document.getElementById("resetBtn");
+
+      function getSelectedValue(name) {
+        const checked = quizForm.querySelector(`input[name="${name}"]:checked`);
+        return checked ? checked.value : null;
+      }
+
+      function gradeQuiz() {
+        let score = 0;
+        const total = Object.keys(answers).length;
+
+        // Build detailed feedback
+        const feedback = document.createElement("div");
+        const summary = document.createElement("p");
+        summary.innerHTML = `<strong>Your score:</strong> <span id="scoreText"></span>`;
+        feedback.appendChild(summary);
+
+        const list = document.createElement("ol");
+        list.setAttribute("aria-label", "Question-by-question feedback");
+
+        for (const qName of Object.keys(answers)) {
+          const selected = getSelectedValue(qName);
+          const correct = answers[qName];
+
+          const item = document.createElement("li");
+          item.style.marginBottom = "0.75rem";
+
+          if (selected === correct) {
+            score += 1;
+            item.innerHTML = `<strong>${qName.toUpperCase()}:</strong> Correct. <span class="explain">${explanations[qName]}</span>`;
+          } else if (selected === null) {
+            item.innerHTML = `<strong>${qName.toUpperCase()}:</strong> Not answered. <span class="explain">${explanations[qName]}</span>`;
+          } else {
+            item.innerHTML = `<strong>${qName.toUpperCase()}:</strong> Incorrect (you chose ${selected}, correct is ${correct}). <span class="explain">${explanations[qName]}</span>`;
+          }
+
+          list.appendChild(item);
+        }
+
+        feedback.appendChild(list);
+
+        // Render results
+        resultsEl.innerHTML = "";
+        resultsEl.appendChild(feedback);
+
+        const scoreText = resultsEl.querySelector("#scoreText");
+        scoreText.textContent = `${score} / ${total}`;
+
+        resultsEl.hidden = false;
+        resultsEl.classList.remove("correct", "incorrect");
+        resultsEl.classList.add(score === total ? "correct" : "incorrect");
+
+        // Move focus for accessibility
+        resultsEl.focus?.();
+        resultsEl.setAttribute("tabindex", "-1");
+      }
+
+      gradeBtn.addEventListener("click", gradeQuiz);
+
+      resetBtn.addEventListener("click", function () {
+        resultsEl.hidden = true;
+        resultsEl.innerHTML = "";
+        resultsEl.classList.remove("correct", "incorrect");
+      });
+    })();
+  </script>
+</body>
+</html>
