@@ -1,1 +1,547 @@
-hello world
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Module 2: Replicability in Bioinformatics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    :root {
+      --text: #111;
+      --muted: #555;
+      --link: #003366;
+      --border: #e5e7eb;
+      --focus: #ffbf47;
+      --bg-card: #fafafa;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: #fff;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .skip-link:focus {
+      left: 1rem;
+      top: 1rem;
+      width: auto;
+      height: auto;
+      padding: 0.5rem 0.75rem;
+      background: #000;
+      color: #fff;
+      z-index: 1000;
+    }
+
+    header, main, footer {
+      max-width: 960px;
+      margin: auto;
+      padding: 1.5rem 1rem;
+    }
+
+    header {
+      border-bottom: 2px solid var(--border);
+    }
+
+    h1 { margin-bottom: 0.25rem; }
+    h2 { margin-top: 2rem; }
+
+    a { color: var(--link); }
+    a:focus {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+    }
+
+    /* Card look (used for collapsible items too) */
+    .video-card {
+      margin-top: 1rem;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg-card);
+    }
+
+    .video-title, .reflection-title {
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .small {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    /* Collapsible item styling (per H3 section) */
+    details.video-card {
+      padding: 0.75rem 1rem;
+    }
+
+    details.video-card > summary {
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      padding: 0.25rem 0;
+      font-weight: 700;
+    }
+
+    details.video-card > summary::-webkit-details-marker {
+      display: none;
+    }
+
+    /* Add a simple triangle indicator */
+    details.video-card > summary::before {
+      content: "▸";
+      font-size: 1.1rem;
+      line-height: 1.2;
+      margin-top: 0.1rem;
+    }
+    details.video-card[open] > summary::before {
+      content: "▾";
+    }
+
+    details.video-card > summary:focus {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+    }
+
+    .item-content {
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--border);
+    }
+
+    /* Expandable video iframe wrapper */
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 6px;
+      background: #000;
+      margin-top: 0.75rem;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Collapsible major sections (optional: Next Steps, Notes...) */
+    details.section {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--bg-card);
+      padding: 0.5rem 1rem;
+      margin-top: 1rem;
+    }
+
+    details.section > summary {
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 1.25rem;
+      list-style: none;
+      padding: 0.75rem 0;
+    }
+
+    details.section > summary::-webkit-details-marker { display: none; }
+
+    details.section > summary:focus {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+    }
+
+    details.section[open] > summary {
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .section-content { padding-bottom: 0.75rem; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header>
+    <h1>Module 2: Replicability in Bioinformatics</h1>
+    <p class="small">
+      This module introduces the foundational concepts of reproducibility in bioinformatics research.
+    </p>
+    <p>
+      <a href="https://kmcooper.github.io/E-PACERR-Enhancing-Responsible-Bioinformatics-Research/">
+        ← Back to all modules
+      </a>
+    </p>
+  </header>
+
+  <main id="main-content">
+
+    <section>
+      <h2>Learning Objectives</h2>
+      <ul>
+        <li>Define reproducibility in the context of bioinformatics research</li>
+        <li>Identify characteristics of reproducible computational workflows</li>
+        <li>Recognize common barriers to reproducibility</li>
+        <li>Apply reproducibility best practices to a research project</li>
+      </ul>
+    </section>
+
+    <!-- Module Content NOT collapsible -->
+    <section>
+      <h2>Module Content</h2>
+      <p>Complete the content below in order for better understanding and continuity of information.</p>
+
+      <!-- Reading (collapsible) -->
+      <details class="video-card">
+        <summary>
+          <span class="video-title">Reading: The Scientific Method and Reproducibility</span>
+        </summary>
+        <div class="item-content">
+          <p>
+            <a href="the_scientific_method_and_reproducibility.html">
+              The Scientific Method and Reproducibility
+            </a>
+          </p>
+          <p class="small">Estimated time to complete: 5–15 minutes</p>
+        </div>
+      </details>
+
+      <!-- Video 1 (collapsible) -->
+      <details class="video-card">
+        <summary>
+          <span class="video-title">Video: The Scientific Method and Reproducibility</span>
+        </summary>
+        <div class="item-content">
+          <p class="small">
+            <a href="https://uofnebraska-my.sharepoint.com/:p:/g/personal/35979329_nebraska_edu/IQCeaYHCwIDgSbK8Y7cf6w6dARmzCs7N4zY6De7pnT6TU5g?e=ftAGKr" target="_blank" rel="noopener">
+              Download Slides (opens in new tab)
+            </a>
+            &nbsp;|&nbsp;
+            <a href="https://unomaha.yuja.com/V/Video?v=9205527&node=39390606&a=195248441" target="_blank" rel="noopener">
+              Open directly in Yuja (opens in new tab)
+            </a>
+          </p>
+
+          <details>
+            <summary>Click to expand and watch video</summary>
+            <div class="video-wrapper">
+              <iframe
+                title="Video: The Scientific Method and Reproducibility"
+                src="https://unomaha.yuja.com/V/Video?v=9205527&node=39390606&a=195248441&preload=false"
+                loading="lazy"
+                allowfullscreen></iframe>
+            </div>
+            <p class="small">Captions and transcript available within the player.</p>
+          </details>
+
+          <p class="small">Estimated time to complete: 10 minutes</p>
+        </div>
+      </details>
+
+      <!-- Reflection 1 (collapsible) -->
+      <details class="video-card">
+        <summary>
+          <span class="reflection-title">Reflection: The Scientific Method and Reproducibility</span>
+        </summary>
+        <div class="item-content">
+          <p>Reflect on the following question(s) before moving on:</p>
+          <ol>
+            <li>Consider a time when instructions you were given to complete a task were unclear. How did that impact your ability to complete the task?</li>
+            <li>How could a person ensure that others would be able to reproduce or replicate their computational analyses?</li>
+            <li>What small adjustments might make a computational workflow clearer and easier to reproduce?</li>
+          </ol>
+          <p class="small">Estimated time to complete: 5–15 minutes</p>
+        </div>
+      </details>
+
+      <!-- Practice Quiz 1 (collapsible) -->
+      <details class="video-card">
+        <summary>
+          <span class="video-title">Practice Quiz: What is Reproducibility?</span>
+        </summary>
+        <div class="item-content">
+          <p>
+            <a href="practice_quiz_what_is_reproducibility.html">
+              Click here to take the Practice Quiz
+            </a>
+          </p>
+          <p class="small">Estimated time to complete: 5–15 minutes</p>
+        </div>
+      </details>
+
+      <!-- Video 2 (collapsible) -->
+      <details class="video-card">
+        <summary>
+          <span class="video-title">Video: Reproducibility and Bioinformatics</span>
+        </summary>
+        <div class="item-content">
+          <p class="small">
+            <a href="https://uofnebraska-my.sharepoint.com/:f:/g/personal/35979329_nebraska_edu/IgC8lKpOGXrOToO0Ry3DkAotARwFJ3ZmyZbudupGvzb9YUk?e=eQkwxn"
+              target="_blank" rel="noopener">
+              Download Slides (opens in new tab)
+            </a>
+            &nbsp;|&nbsp;
+            <a href="../" target="_blank" rel="noopener">
+              Open directly in Yuja (opens in new tab)
+            </a>
+          </p>
+
+          <details>
+            <summary>Click to expand and watch video</summary>
+            <div class="video-wrapper">
+              <iframe
+                title="Video: Reproducibility and Bioinformatics"
+                src="../"
+                loading="lazy"
+                allowfullscreen></iframe>
+            </div>
+            <p class="small">Captions and transcript available within the player.</p>
+          </details>
+
+          <p class="small">Estimated time to complete: 10 minutes</p>
+        </div>
+      </details>
+
+      <!-- Reflection 2 (collapsible) -->
+      <details class="video-card">
+        <summary>
+          <span class="reflection-title">Reflection: Reproducibility and Bioinformatics</span>
+        </summary>
+        <div class="item-content">
+          <p>Reflect on the following question(s) before moving on:</p>
+          <ol>
+            <li>How many times do you think an experiment would need to be repeated for scientists to be confident in the results?</li>
+            <li>Scientists often present their work to others in academic settings such as a conference or seminar. What is the role of these discussions reproducibility?</li>
+          </ol>
+          <p class="small">Estimated time to complete: 5–15 minutes</p>
+        </div>
+      </details>
+
+      <!-- Practice Quiz 2 (collapsible) -->
+      <details class="video-card">
+        <summary>
+          <span class="video-title">Practice Quiz: Data Management and Reproducibility</span>
+        </summary>
+        <div class="item-content">
+          <p>
+            <a href="practice_quiz_data_management_and_reproducibility.html">
+              Click here to take the Practice Quiz
+            </a>
+          </p>
+          <p class="small">Estimated time to complete: 30–45 minutes</p>
+        </div>
+      </details>
+
+      <!-- Video 3 (collapsible) -->
+      <details class="video-card">
+        <summary>
+          <span class="video-title">Video: Data Availability and Access</span>
+        </summary>
+        <div class="item-content">
+          <p class="small">
+            <a href="https://uofnebraska-my.sharepoint.com/:f:/g/personal/35979329_nebraska_edu/IgC8lKpOGXrOToO0Ry3DkAotARwFJ3ZmyZbudupGvzb9YUk?e=eQkwxn"
+              target="_blank" rel="noopener">
+              Download Slides (opens in new tab)
+            </a>
+            &nbsp;|&nbsp;
+            <a href="../" target="_blank" rel="noopener">
+              Open directly in Yuja (opens in new tab)
+            </a>
+          </p>
+
+          <details>
+            <summary>Click to expand and watch video</summary>
+            <div class="video-wrapper">
+              <iframe
+                title="Video: Data Availability and Access"
+                src="../"
+                loading="lazy"
+                allowfullscreen></iframe>
+            </div>
+            <p class="small">Captions and transcript available within the player.</p>
+          </details>
+
+          <p class="small">Estimated time to complete: 10 minutes</p>
+        </div>
+      </details>
+      
+      <!-- Reading (collapsible) -->
+      <details class="video-card">
+        <summary>
+          <span class="video-title">Activity: Data Availability and Access</span>
+        </summary>
+        <div class="item-content">
+          <p>
+            <a href="activity_data_availability_and_access.html">
+              Activity: Data Availability and Access
+            </a>
+          </p>
+          <p class="small">Estimated time to complete: 30–60 minutes</p>
+        </div>
+      </details>
+      
+      <!-- Video (collapsible) -->
+      <details class="video-card">
+        <summary>
+          <span class="video-title">Video: Making Your Code Accessible</span>
+        </summary>
+        <div class="item-content">
+          <p class="small">
+            <a href="https://uofnebraska-my.sharepoint.com/:f:/g/personal/35979329_nebraska_edu/IgC8lKpOGXrOToO0Ry3DkAotARwFJ3ZmyZbudupGvzb9YUk?e=eQkwxn"
+              target="_blank" rel="noopener">
+              Download Slides (opens in new tab)
+            </a>
+            &nbsp;|&nbsp;
+            <a href="../" target="_blank" rel="noopener">
+              Open directly in Yuja (opens in new tab)
+            </a>
+          </p>
+
+          <details>
+            <summary>Click to expand and watch video</summary>
+            <div class="video-wrapper">
+              <iframe
+                title="Video: Making Your Code Accessible"
+                src="../"
+                loading="lazy"
+                allowfullscreen></iframe>
+            </div>
+            <p class="small">Captions and transcript available within the player.</p>
+          </details>
+
+          <p class="small">Estimated time to complete: 10 minutes</p>
+        </div>
+      </details>
+      
+      <!-- Video (collapsible) -->
+      <details class="video-card">
+        <summary>
+          <span class="video-title">Video: Sharing your Code</span>
+        </summary>
+        <div class="item-content">
+          <p class="small">
+            <a href="https://uofnebraska-my.sharepoint.com/:f:/g/personal/35979329_nebraska_edu/IgC8lKpOGXrOToO0Ry3DkAotARwFJ3ZmyZbudupGvzb9YUk?e=eQkwxn"
+              target="_blank" rel="noopener">
+              Download Slides (opens in new tab)
+            </a>
+            &nbsp;|&nbsp;
+            <a href="../" target="_blank" rel="noopener">
+              Open directly in Yuja (opens in new tab)
+            </a>
+          </p>
+
+          <details>
+            <summary>Click to expand and watch video</summary>
+            <div class="video-wrapper">
+              <iframe
+                title="Video: Sharing your Code"
+                src="../"
+                loading="lazy"
+                allowfullscreen></iframe>
+            </div>
+            <p class="small">Captions and transcript available within the player.</p>
+          </details>
+
+          <p class="small">Estimated time to complete: 10 minutes</p>
+        </div>
+      </details>
+
+    <!-- Module 1 Quiz (collapsible) -->
+      <details class="video-card">
+        <summary>
+          <span class="video-title">Module 1 Quiz</span>
+        </summary>
+        <div class="item-content">
+          <p>
+            <a href="module_1_quiz.html">
+              Click here to take the Module 1 Quiz
+            </a>
+          </p>
+          <p class="small">Estimated time to complete: 5–15 minutes</p>
+        </div>
+      </details>
+
+    </section>
+
+    <!-- Next Steps (optional collapsible) -->
+    <details class="section" open>
+      <summary>Next Steps</summary>
+      <div class="section-content">
+        <ul>
+          <li>Feedback: <a href="https://unomaha.az1.qualtrics.com/jfe/form/SV_5je3u1Hl4cqSp5c">Please tell us what you thought of this module</a></li>
+          <li>Found a problem? <a href="https://unomaha.az1.qualtrics.com/jfe/form/SV_5AqZKWawUuMPjym">Report it!</a></li>
+          <li>Continue to <a href="../module_2/">Module 2: Replicability in Bioinformatics</a></li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- Notes for Educators (optional collapsible) -->
+    <details class="section" open>
+      <summary>Notes for Educators</summary>
+      <div class="section-content">
+        <p>
+          <strong>You can use this content in your classes!</strong>
+          This work is provided under a
+          <a href="../LICENSE.md">Creative Commons Attribution– Non Commercial (CC BY-NC) license</a>.
+          You can use, copy, share, or adapt this material for teaching, learning, or other non-commercial purposes.
+        </p>
+        <p>
+          We do ask that you cite this work when you use it:
+          <a href="../CITATION.cff">Learn how</a>.
+        </p>
+      </div>
+    </details>
+
+    <!-- Notes for Students (optional collapsible) -->
+    <details class="section" open>
+      <summary>Notes for Students</summary>
+      <div class="section-content">
+        <p>
+          <strong>There's more on Canvas!</strong> Find more content and quizzes on the Canvas version of this course.
+          <a href="https://kmcooper.github.io/E-PACERR-Enhancing-Responsible-Bioinformatics-Research/">
+            Go back and click “Enroll in the Self-Paced Canvas Course” for more.
+          </a>
+        </p>
+      </div>
+    </details>
+
+  </main>
+
+  <footer>
+    <p>
+      Accessibility: This site aims to meet <strong>WCAG 2.1 Level AA</strong>.
+      All videos include captions and transcripts via the Yuja player.
+      For transcript download help, visit the
+      <a href="https://support.yuja.com/hc/en-us/articles/360048657534-Downloading-Notes-Resources-and-Transcripts-in-the-Lumina-Media-Player" target="_blank" rel="noopener">
+        Yuja Help page (opens in new tab)
+      </a>.
+    </p>
+    <p>© E-PACERR — University of Nebraska at Omaha</p>
+  </footer>
+
+</body>
+</html>
