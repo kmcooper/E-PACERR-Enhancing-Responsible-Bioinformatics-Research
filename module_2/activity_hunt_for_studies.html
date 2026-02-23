@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Activity: Hunt for Reproducibility and Replication Studies</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Activity: Hunt for Reproducibility and Replication Studies" />
+
+  <style>
+    :root {
+      --text: #111;
+      --muted: #555;
+      --link: #003366;
+      --border: #e5e7eb;
+      --focus: #ffbf47;
+      --bg-card: #fafafa;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background: #fff;
+    }
+
+    /* Skip link */
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .skip-link:focus {
+      left: 1rem;
+      top: 1rem;
+      width: auto;
+      height: auto;
+      padding: 0.5rem 0.75rem;
+      background: #000;
+      color: #fff;
+      z-index: 1000;
+    }
+
+    header, main, footer {
+      max-width: 960px;
+      margin: auto;
+      padding: 1.5rem 1rem;
+    }
+
+    header {
+      border-bottom: 2px solid var(--border);
+    }
+
+    h1 {
+      margin: 0 0 0.5rem 0;
+      font-size: 2rem;
+      line-height: 1.2;
+    }
+
+    h2 {
+      margin-top: 2rem;
+      line-height: 1.25;
+    }
+
+    p { margin: 0.75rem 0; }
+
+    a { color: var(--link); }
+    a:focus {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+    }
+
+    .reading-card {
+      margin-top: 1rem;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg-card);
+    }
+
+    .small {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    ol { padding-left: 1.25rem; }
+    li { margin: 0.5rem 0; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header>
+    <h1>Activity: Hunt for Reproducibility and Replication Studies</h1>
+    <p>
+      <a href="./">← Back to Module 1</a>
+      <span class="small" aria-hidden="true"> &nbsp;|&nbsp; </span>
+      <a href="../">Back to Modules</a>
+    </p>
+  </header>
+
+  <main id="main-content">
+    <article class="reading-card" aria-labelledby="reading-title">
+      <h2 id="reading-title">Overview</h2>
+
+      <p>
+        The objective of this activity is to try and find peer-reveiwed research that describes reproducibility or replication studies in the biomedical informatics and bioinformatics fields. 
+      </p>
+
+      <h2>Instructions</h2>
+      <p>
+        PubMed is an online repository of over 34 million citations for biomedical literature from MEDLINE, life science journals, and online books. It is a useful resource for researchers (and the public!) to identify peer-reviewed and trusted research on a given biomedical topic. 
+        <br><br>
+        Go to the Advanced PubMed Query builder at <a href"https://pubmed.ncbi.nlm.nih.gov/advanced/">https://pubmed.ncbi.nlm.nih.gov/advanced/</a> and search reproducibility or replication studies. Are you able to find them using that terminology? 
+        <br><br>
+      <h2>Try This!</h2>
+      <p>
+        Certain papers may not mention the terms replication or reproducibility. Try these other terms to see if you get different or additional results:
+        <br><br>
+        <pre>
+            <code>
+            replication study 
+            reproducibility study
+            replication analysis
+            independent replication
+            independent validation
+            validation study
+            reanalysis
+            computational reanalysis
+            independent reanalysis
+            ripeline replication
+            external validation
+          </code>
+        </pre>
+        You can narrow your search to only "omics" studies by adding the following text to your query:
+        <pre>
+            <code>
+            AND (bioinformatics OR "computational biology" OR genomics OR transcriptomics)
+          </code>
+        </pre>
+        Are you able to reliably identify any studies of replication or reproducibility? How frequently do they occur? Do any journals appear to re-occur as publication targets? 
+      </p>
+
+  </main>
+
+  <footer>
+    <p>
+      Accessibility: This page is designed to support <strong>WCAG&nbsp;2.1 Level&nbsp;AA</strong> (semantic headings,
+      keyboard navigation, and clear structure). If you encounter accessibility barriers, please contact the project team.
+    </p>
+    <p>© E-PACERR — University of Nebraska at Omaha</p>
+  </footer>
+</body>
+</html>
