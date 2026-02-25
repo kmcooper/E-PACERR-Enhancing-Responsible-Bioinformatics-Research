@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Module 2 Practice Quiz: Replicability in Bioinformatics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root{
+      --text:#111;
+      --muted:#555;
+      --link:#003366;
+      --border:#e5e7eb;
+      --focus:#ffbf47;
+      --bg:#fff;
+      --bg-card:#fafafa;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      line-height:1.6;
+      color:var(--text);
+      background:var(--bg);
+    }
+    a{color:var(--link)}
+    a:focus, button:focus, input:focus{outline:3px solid var(--focus); outline-offset:2px;}
+    .skip-link{
+      position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
+    }
+    .skip-link:focus{
+      position:static; width:auto; height:auto; padding:.5rem 1rem; display:inline-block;
+      background:#000; color:#fff; margin:.5rem;
+    }
+    header{
+      border-bottom:1px solid var(--border);
+      background:#fff;
+    }
+    .wrap{max-width:980px; margin:0 auto; padding:1rem;}
+    .breadcrumbs{font-size:.95rem; color:var(--muted); margin:.25rem 0 0}
+    .breadcrumbs a{color:var(--muted)}
+    h1{margin:.5rem 0 .25rem; font-size:1.75rem}
+    .subtitle{margin:0; color:var(--muted)}
+    main{padding:1rem 0 2rem}
+    .card{
+      border:1px solid var(--border);
+      background:var(--bg-card);
+      border-radius:14px;
+      padding:1rem;
+      margin:1rem 0;
+    }
+    fieldset{
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:1rem;
+      margin:0 0 1rem;
+      background:#fff;
+    }
+    legend{font-weight:700; padding:0 .25rem}
+    .choices{display:grid; gap:.5rem; margin-top:.5rem}
+    .choice{display:flex; gap:.5rem; align-items:flex-start}
+    .choice input{margin-top:.25rem}
+    .actions{display:flex; flex-wrap:wrap; gap:.75rem; margin-top:1rem}
+    button{
+      border:1px solid #111;
+      background:#111;
+      color:#fff;
+      border-radius:12px;
+      padding:.65rem .95rem;
+      cursor:pointer;
+      font-size:1rem;
+    }
+    button.secondary{
+      background:#fff; color:#111;
+    }
+    .note{color:var(--muted); font-size:.98rem; margin:.25rem 0 0}
+    .result{
+      background:#fff;
+      border:2px solid var(--border);
+      border-radius:14px;
+      padding:1rem;
+    }
+    .result.correct{border-color:#2e7d32}
+    .result.incorrect{border-color:#c62828}
+    .explain{margin:.25rem 0 0; color:#333}
+    footer{
+      border-top:1px solid var(--border);
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .sr-only{
+      position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+      overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header>
+    <div class="wrap">
+      <nav aria-label="Breadcrumb" class="breadcrumbs">
+        <a href="../index.html">Home</a> &raquo;
+        <a href="./index.html">Module 2</a> &raquo;
+        <span aria-current="page">Practice Quiz</span>
+      </nav>
+      <h1>Module 2 Practice Quiz</h1>
+      <p class="subtitle">Replicability in Bioinformatics (Beginner check-in)</p>
+      <p class="note">Answer all questions, then select <strong>Grade Quiz</strong> to view feedback.</p>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    <section class="card" aria-labelledby="about-title">
+      <h2 id="about-title">What this quiz covers</h2>
+      <ul>
+        <li>What “replicability” means (and why the term can be confusing)</li>
+        <li>Why independent replication attempts matter for trust</li>
+        <li>Why replication can fail even when data and code are shared</li>
+        <li>How negative and null results fit into scientific progress</li>
+      </ul>
+    </section>
+
+    <form id="quiz" class="card" aria-describedby="instructions">
+      <p id="instructions" class="note">
+        Each question has one best answer. Your results appear at the bottom of the page.
+      </p>
+
+      <!-- Q1 -->
+      <fieldset aria-labelledby="q1-title">
+        <legend id="q1-title">1) In this module, “replicability” is most closely described as:</legend>
+        <div class="choices" role="radiogroup" aria-label="Question 1 choices">
+          <label class="choice"><input type="radio" name="q1" value="A" /> A. Getting the same result with the same data and the same code</label>
+          <label class="choice"><input type="radio" name="q1" value="B" /> B. An independent group obtaining the same result using artifacts they develop independently</label>
+          <label class="choice"><input type="radio" name="q1" value="C" /> C. Making figures look identical across papers</label>
+          <label class="choice"><input type="radio" name="q1" value="D" /> D. Publishing only statistically significant findings</label>
+        </div>
+      </fieldset>
+
+      <!-- Q2 -->
+      <fieldset aria-labelledby="q2-title">
+        <legend id="q2-title">2) Why does the module warn that “replicability” can be confusing?</legend>
+        <div class="choices" role="radiogroup" aria-label="Question 2 choices">
+          <label class="choice"><input type="radio" name="q2" value="A" /> A. Because different disciplines use different definitions for reproducibility/replicability</label>
+          <label class="choice"><input type="radio" name="q2" value="B" /> B. Because computers always produce random outputs</label>
+          <label class="choice"><input type="radio" name="q2" value="C" /> C. Because journals do not allow methods sections</label>
+          <label class="choice"><input type="radio" name="q2" value="D" /> D. Because code can never be shared</label>
+        </div>
+      </fieldset>
+
+      <!-- Q3 -->
+      <fieldset aria-labelledby="q3-title">
+        <legend id="q3-title">3) The ACM definition emphasized in the slides suggests replicability involves:</legend>
+        <div class="choices" role="radiogroup" aria-label="Question 3 choices">
+          <label class="choice"><input type="radio" name="q3" value="A" /> A. The same team rerunning the same script on the same computer</label>
+          <label class="choice"><input type="radio" name="q3" value="B" /> B. A different team, different setup, and independently developed artifacts</label>
+          <label class="choice"><input type="radio" name="q3" value="C" /> C. Peer review only, with no re-running of analyses</label>
+          <label class="choice"><input type="radio" name="q3" value="D" /> D. Publishing results without code to prevent misuse</label>
+        </div>
+      </fieldset>
+
+      <!-- Q4 -->
+      <fieldset aria-labelledby="q4-title">
+        <legend id="q4-title">4) Replication attempts are connected to “trust” because they help us:</legend>
+        <div class="choices" role="radiogroup" aria-label="Question 4 choices">
+          <label class="choice"><input type="radio" name="q4" value="A" /> A. Avoid sharing methods</label>
+          <label class="choice"><input type="radio" name="q4" value="B" /> B. Decide whether findings hold up when independently tested</label>
+          <label class="choice"><input type="radio" name="q4" value="C" /> C. Guarantee every result is true</label>
+          <label class="choice"><input type="radio" name="q4" value="D" /> D. Replace the need for statistics</label>
+        </div>
+      </fieldset>
+
+      <!-- Q5 -->
+      <fieldset aria-labelledby="q5-title">
+        <legend id="q5-title">5) Even when data and code are provided, replication/reproduction can fail due to:</legend>
+        <div class="choices" role="radiogroup" aria-label="Question 5 choices">
+          <label class="choice"><input type="radio" name="q5" value="A" /> A. Software version differences, missing metadata, incomplete documentation, or human error</label>
+          <label class="choice"><input type="radio" name="q5" value="B" /> B. Too many citations in the paper</label>
+          <label class="choice"><input type="radio" name="q5" value="C" /> C. Using a PDF for the manuscript</label>
+          <label class="choice"><input type="radio" name="q5" value="D" /> D. The presence of a methods section</label>
+        </div>
+      </fieldset>
+
+      <!-- Q6 -->
+      <fieldset aria-labelledby="q6-title">
+        <legend id="q6-title">6) Why can bioinformatics pipelines create many “opportunities for modification”?</legend>
+        <div class="choices" role="radiogroup" aria-label="Question 6 choices">
+          <label class="choice"><input type="radio" name="q6" value="A" /> A. Pipelines usually have multiple tools and parameters where choices can differ</label>
+          <label class="choice"><input type="radio" name="q6" value="B" /> B. Because sequencing instruments always change file extensions</label>
+          <label class="choice"><input type="radio" name="q6" value="C" /> C. Because code is never reused</label>
+          <label class="choice"><input type="radio" name="q6" value="D" /> D. Because figures cannot be regenerated</label>
+        </div>
+      </fieldset>
+
+      <!-- Q7 -->
+      <fieldset aria-labelledby="q7-title">
+        <legend id="q7-title">7) A “negative result” most commonly means:</legend>
+        <div class="choices" role="radiogroup" aria-label="Question 7 choices">
+          <label class="choice"><input type="radio" name="q7" value="A" /> A. The study was unethical</label>
+          <label class="choice"><input type="radio" name="q7" value="B" /> B. Results are not statistically significant (or the expected effect was not found)</label>
+          <label class="choice"><input type="radio" name="q7" value="C" /> C. The data are always wrong</label>
+          <label class="choice"><input type="radio" name="q7" value="D" /> D. The authors did not try hard enough</label>
+        </div>
+      </fieldset>
+
+      <!-- Q8 -->
+      <fieldset aria-labelledby="q8-title">
+        <legend id="q8-title">8) “Publication bias” in this context refers to:</legend>
+        <div class="choices" role="radiogroup" aria-label="Question 8 choices">
+          <label class="choice"><input type="radio" name="q8" value="A" /> A. Journals preferring to publish only positive or “exciting” findings</label>
+          <label class="choice"><input type="radio" name="q8" value="B" /> B. Journals preferring to publish only long papers</label>
+          <label class="choice"><input type="radio" name="q8" value="C" /> C. Journals preferring to publish only papers with fewer than 10 references</label>
+          <label class="choice"><input type="radio" name="q8" value="D" /> D. Journals preferring papers with no figures</label>
+        </div>
+      </fieldset>
+
+      <!-- Q9 -->
+      <fieldset aria-labelledby="q9-title">
+        <legend id="q9-title">9) “Gray literature” generally means:</legend>
+        <div class="choices" role="radiogroup" aria-label="Question 9 choices">
+          <label class="choice"><input type="radio" name="q9" value="A" /> A. Evidence not published in commercial publications (often not formally peer reviewed)</label>
+          <label class="choice"><input type="radio" name="q9" value="B" /> B. Articles printed in black-and-white only</label>
+          <label class="choice"><input type="radio" name="q9" value="C" /> C. Any paper older than 10 years</label>
+          <label class="choice"><input type="radio" name="q9" value="D" /> D. Any dataset without a DOI</label>
+        </div>
+      </fieldset>
+
+      <!-- Q10 -->
+      <fieldset aria-labelledby="q10-title">
+        <legend id="q10-title">10) The slides emphasize: “Failure to replicate is not failure to do good science” because it can:</legend>
+        <div class="choices" role="radiogroup" aria-label="Question 10 choices">
+          <label class="choice"><input type="radio" name="q10" value="A" /> A. Reveal meaningful differences, incorrect assumptions, or errors—and generate new questions</label>
+          <label class="choice"><input type="radio" name="q10" value="B" /> B. Prove that science is pointless</label>
+          <label class="choice"><input type="radio" name="q10" value="C" /> C. Eliminate the need for documentation</label>
+          <label class="choice"><input type="radio" name="q10" value="D" /> D. Guarantee the original authors committed misconduct</label>
+        </div>
+      </fieldset>
+
+      <div class="actions">
+        <button type="button" id="gradeBtn">Grade Quiz</button>
+        <button type="reset" class="secondary" id="resetBtn">Reset</button>
+      </div>
+
+      <div id="results" class="result" role="status" aria-live="polite" aria-atomic="true" hidden></div>
+    </form>
+
+    <section class="card" aria-labelledby="next-title">
+      <h2 id="next-title">What to do if you missed questions</h2>
+      <ul>
+        <li>Review the definition(s) of replicability and how they vary across disciplines.</li>
+        <li>Revisit examples of why replication can fail even with shared data/code.</li>
+        <li>Read the section on negative/null results and publication bias.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>
+        <strong>Module 2:</strong> Replicability in Bioinformatics &mdash; Practice Quiz
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const answers = {
+        q1: "B",
+        q2: "A",
+        q3: "B",
+        q4: "B",
+        q5: "A",
+        q6: "A",
+        q7: "B",
+        q8: "A",
+        q9: "A",
+        q10: "A"
+      };
+
+      const explanations = {
+        q1: "The module highlights an ACM-aligned definition: an independent group can obtain the same result using artifacts developed independently.",
+        q2: "The slides note that definitions of reproducibility/replicability vary across disciplines, so terminology can be inconsistent.",
+        q3: "ACM’s definition emphasizes different team + different setup + independently developed artifacts.",
+        q4: "Independent replication attempts help weigh whether findings hold up and therefore support trust in results.",
+        q5: "Slides list common causes like software/hardware differences, missing metadata, incomplete documentation, and human error.",
+        q6: "Bioinformatics workflows often involve many steps/tools/parameters—each choice can change outcomes.",
+        q7: "Negative/null results often mean the expected effect was not observed or results are not statistically significant.",
+        q8: "Publication bias often favors positive or exciting results, making negative/null findings harder to publish.",
+        q9: "Gray literature includes evidence not published commercially (often not formally peer reviewed), like reports or theses.",
+        q10: "A failed replication can reveal differences, errors, or new biology—leading to knowledge-bearing questions."
+      };
+
+      const form = document.getElementById("quiz");
+      const results = document.getElementById("results");
+      const gradeBtn = document.getElementById("gradeBtn");
+      const resetBtn = document.getElementById("resetBtn");
+
+      function selected(name) {
+        const el = form.querySelector(`input[name="${name}"]:checked`);
+        return el ? el.value : null;
+      }
+
+      function grade() {
+        const keys = Object.keys(answers);
+        let score = 0;
+
+        const wrap = document.createElement("div");
+
+        const summary = document.createElement("p");
+        summary.innerHTML = `<strong>Your score:</strong> <span id="scoreText"></span>`;
+        wrap.appendChild(summary);
+
+        const ol = document.createElement("ol");
+        ol.setAttribute("aria-label", "Feedback by question");
+
+        keys.forEach((q) => {
+          const user = selected(q);
+          const correct = answers[q];
+
+          const li = document.createElement("li");
+          li.style.marginBottom = "0.75rem";
+
+          if (user === correct) {
+            score += 1;
+            li.innerHTML = `<strong>${q.toUpperCase()}:</strong> Correct. <div class="explain">${explanations[q]}</div>`;
+          } else if (user === null) {
+            li.innerHTML = `<strong>${q.toUpperCase()}:</strong> Not answered. <div class="explain">${explanations[q]}</div>`;
+          } else {
+            li.innerHTML = `<strong>${q.toUpperCase()}:</strong> Incorrect (you chose ${user}; correct is ${correct}). <div class="explain">${explanations[q]}</div>`;
+          }
+
+          ol.appendChild(li);
+        });
+
+        wrap.appendChild(ol);
+
+        results.innerHTML = "";
+        results.appendChild(wrap);
+
+        results.hidden = false;
+        results.classList.remove("correct", "incorrect");
+        results.classList.add(score === keys.length ? "correct" : "incorrect");
+
+        const scoreText = results.querySelector("#scoreText");
+        scoreText.textContent = `${score} / ${keys.length}`;
+
+        // Move focus to results for accessibility
+        results.setAttribute("tabindex", "-1");
+        results.focus();
+      }
+
+      gradeBtn.addEventListener("click", grade);
+
+      resetBtn.addEventListener("click", function () {
+        results.hidden = true;
+        results.innerHTML = "";
+        results.classList.remove("correct", "incorrect");
+      });
+    })();
+  </script>
+</body>
+</html>
