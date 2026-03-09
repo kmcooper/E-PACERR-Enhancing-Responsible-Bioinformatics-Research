@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Other Metrics of Scientific Rigor and Reproducibility</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Reading: The Scientific Method and Reproducibility (Module 1)" />
+
+  <style>
+    :root {
+      --text: #111;
+      --muted: #555;
+      --link: #003366;
+      --border: #e5e7eb;
+      --focus: #ffbf47;
+      --bg-card: #fafafa;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background: #fff;
+    }
+
+    /* Skip link */
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .skip-link:focus {
+      left: 1rem;
+      top: 1rem;
+      width: auto;
+      height: auto;
+      padding: 0.5rem 0.75rem;
+      background: #000;
+      color: #fff;
+      z-index: 1000;
+    }
+
+    header, main, footer {
+      max-width: 960px;
+      margin: auto;
+      padding: 1.5rem 1rem;
+    }
+
+    header {
+      border-bottom: 2px solid var(--border);
+    }
+
+    h1 {
+      margin: 0 0 0.5rem 0;
+      font-size: 2rem;
+      line-height: 1.2;
+    }
+
+    h2 {
+      margin-top: 2rem;
+      line-height: 1.25;
+    }
+
+    p { margin: 0.75rem 0; }
+
+    a { color: var(--link); }
+    a:focus {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+    }
+
+    .reading-card {
+      margin-top: 1rem;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg-card);
+    }
+
+    .small {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    ol { padding-left: 1.25rem; }
+    li { margin: 0.5rem 0; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header>
+    <h1>Other Metrics of Scientific Rigor and Reproducibility</h1>
+    <p class="small">Module  Reading</p>
+    <p>
+      <a href="./">← Back to Module</a>
+      <span class="small" aria-hidden="true"> &nbsp;|&nbsp; </span>
+      <a href="../">Back to all Modules</a>
+    </p>
+  </header>
+
+  <main id="main-content">
+    <article class="reading-card" aria-labelledby="reading-title">
+      <h2 id="reading-title">Overview</h2>
+
+      <p>
+        As we consider reproducibility and rigor to be expected standards for scientific research, we can also introduce other "stress tests" for our work to enhance public trust and validation. Some terms that are used for these additional checks on scientific work include:
+        <ul>
+            <li>Generalizability</li>
+            <li>Reliability</li>
+            <li>Robustness</li>
+            <li>Bias/Fairness</li>
+            <li>...and more!</li>
+        </ul>
+      </p>
+
+      <h2>Stress Tests on Science</h2>
+      <p>
+       This is not necessarily a call to add in a number of external and internal checks and balances on a project. However, awareness that the "spirit" or intent of the scientific method implies our research to be rigorous and reproducible helps us design projects that fit those criteria. To enhance awareness of this intent, in this module we introduce additional concepts that should inform your design, implementation, and dissemination of your research work. 
+       <br><br>
+       If you think of your experiment or project as a building, consider these addtional metrics as stress tests on your project. In our context, we can think of a <b>stress test</b> is an examination or metric to determine how well the findings of a project hold up to interrogation. Not every project will be perfectly reproducible, replicable, or generalizable - but you as the researcher can help spread awareness by noting weaknesses you identify as you share your research. 
+       <br><br>
+       We commonly find notes on potential weaknesses in a "Limitations", "Considerations", or even the "Discussion" section of a paper or talk. Not every publication requires the inclusion of one of these sections, but you can always choose to include your own as a part of your manuscript. By highlighting for others the limitations of your work - or where you think the "stress tests" of science may find issues - you help the scientific community with your intimate knowledge of your work. 
+      </p>
+    
+      <h2>Relevance to Bioinformatics</h2>
+      <p>
+        Being a bioinformatician goes beyond knowing how to problem solve with technology and code in the biomedical sciences. It does require knowledge of the processes and ecosystem of science, and how to pratice the scientific method. As a part of this, we are expected to hold ourselves to standards that are not easily communicated.
+        <br><br>
+        Adjacent fields often do have pathways to indicate competence - for example, the American Medical Informatics Association (AMIA) provides certification for <a href="https://amia.org/careers-certifications-informatics/amia-health-informatics-certification-ahic">Health Informatics Professionals (AHIC)</a>. The American Health Information Management Association (AHIMA) provides <a href="https://www.ahima.org/certification-careers/certifications-overview/#explore-certs">mulitple credentials based on experience and education</a>. As of this writing, there are no professional licensures or certifications for bioinformaticians that signal their competence on an agreed-upon body of work. There are many reasons that underlie this lack of options for bioinformaticians. We should note that the International Society for Computational Biology (ISCB) does include <a href="https://academic.oup.com/bioinformaticsadvances/article/4/1/vbae166/7903279">recommendations on competencies for bioinformatics professionals</a>, and <a href="https://www.abmgg.org/initial-certification/">some certifications do exist</a>, but largely the knowledge and training required to be familiar with rigor and reproducibility standards is expected to come through research training performed at the undergraduate or graduate level (i.e. in academia).  
+      </p>
+
+      <h2>The Bottom Line</h2>
+      <p>
+        It is up to scientists themselves to uphold standards for rigor and reproducibility through many angles, including but not limited to:
+        <ul>
+            <li>Reading the acaemic literature with a critical eye</li>
+            <li>Participating in peer-review with intention</li>
+            <li>Communicating your work clearly with others</li>
+            <li>Communicating these expectations with trainees</li>
+            <li>Engaging in scientific discourse through conferences, publications, seminars, and workshops</li>
+            <li>Sharing transparent and well documented code, data, and methods</li>
+            <li>"Stress-testing" your project for strengths and weaknesses</li>
+        </ul>
+        
+      </p>
+    </article>
+  </main>
+
+  <footer>
+    <p>
+      Accessibility: This page is designed to support <strong>WCAG&nbsp;2.1 Level&nbsp;AA</strong> (semantic headings,
+      keyboard navigation, and clear structure). If you encounter accessibility barriers, please contact the project team.
+    </p>
+    <p>© E-PACERR — University of Nebraska at Omaha</p>
+  </footer>
+</body>
+</html>
