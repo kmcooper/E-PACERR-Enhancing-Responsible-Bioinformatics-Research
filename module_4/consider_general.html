@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Activity: Consider Generalizability</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Reading: The Scientific Method and Reproducibility (Module 1)" />
+
+  <style>
+    :root {
+      --text: #111;
+      --muted: #555;
+      --link: #003366;
+      --border: #e5e7eb;
+      --focus: #ffbf47;
+      --bg-card: #fafafa;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background: #fff;
+    }
+
+    /* Skip link */
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .skip-link:focus {
+      left: 1rem;
+      top: 1rem;
+      width: auto;
+      height: auto;
+      padding: 0.5rem 0.75rem;
+      background: #000;
+      color: #fff;
+      z-index: 1000;
+    }
+
+    header, main, footer {
+      max-width: 960px;
+      margin: auto;
+      padding: 1.5rem 1rem;
+    }
+
+    header {
+      border-bottom: 2px solid var(--border);
+    }
+
+    h1 {
+      margin: 0 0 0.5rem 0;
+      font-size: 2rem;
+      line-height: 1.2;
+    }
+
+    h2 {
+      margin-top: 2rem;
+      line-height: 1.25;
+    }
+
+    p { margin: 0.75rem 0; }
+
+    a { color: var(--link); }
+    a:focus {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+    }
+
+    .reading-card {
+      margin-top: 1rem;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg-card);
+    }
+
+    .small {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    ol { padding-left: 1.25rem; }
+    li { margin: 0.5rem 0; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header>
+    <h1>Consider Generalizability</h1>
+    <p>
+      <a href="./">← Back to Module 1</a>
+      <span class="small" aria-hidden="true"> &nbsp;|&nbsp; </span>
+      <a href="../">Back to Modules</a>
+    </p>
+  </header>
+
+  <main id="main-content">
+    <article class="reading-card" aria-labelledby="reading-title">
+      <h2>Consider This</h2>
+      <p>
+        Humans naturally generalize from experience, which can be useful in daily life but can also lead to overgeneralization. In science, generalization is not something to avoid entirely. Often times it is the goal. However, scientific claims should only extend as far as the evidence allows. A study may provide strong evidence within a specific sample or setting while still having limited generalizability to other populations, contexts, or conditions. Good scientific communication makes those boundaries clear.
+        <br><br>
+        Consider a time when you heard a broad statement made that didn't reflect the nuance or complexity of reality. Then consider the statements below. Are they too broad/too general?
+        <ul>
+           <li><i>"Cats are unfamiliar and do not like to cuddle."</i></li> 
+          <li><i>"Scientists love nerdy stuff like Dungeons and Dragons."</i></li> 
+          <li><i>"Bioinformaticians are really strong on the computer science discilpine but tend to be weaker in molecular biology."</i></li> 
+        </ul>
+        These statements are not necessarily correct or incorrect outright - there are definitely scientists out there who like Dungeons and Dragons! But there are also definitely scientists out there who do not. These are called <b>faulty generalizations</b>. 
+        <br><br>
+        If you want to learn more about common fallacies in logic and reasoning, <b>you should</b>! It is an important component of Philosophy, which is <i>incredibly important</i> for science. <a href="https://owl.purdue.edu/owl/general_writing/academic_writing/logic_in_argumentative_writing/fallacies.html">Consider this list from the Purdue Online Writing Lab as a starting point</a>.
+        <br><br>
+        We want to ensure that the generalizations we make in science meet the evidence that is available. There are certain broad generalizations we <i>can</i> make in science that are supported by significant amounts of evidence, research performed by many multiples of independent research groups and labs, and consensus from the scientific community in these areas of expertise:
+            <ul>
+                <li><i>"Smoking cigarettes is detrimental to human health."</i></li>
+                <li><i>"Exposure to radiation increases risk for certain cancers."</i></li>
+            </ul>
+            
+        However, we can generally only make limited generalizations based on one particular study or set of experiments (unless it is massive in scale). Consider a study performed by your lab where you compared gene expression with RNA-sequencing for 30 mice treated with a eczema drug compared to 30 controls. You find some evidence that the drug performed slightly better than controls. Which statement below best reflects the evidence?
+        <ol>
+            <li>The results show that the eczema drug SkinGreat is an effective treatment for eczema.</li>
+            <li>The results show that the eczema drug SkinGreat performs slightly better than controls.</li>
+            <li>The results show that the eczema drug SkinGreat performs slightly better than controls in a study comparing treated mice (n=30) against controls (n=30).</li>
+            <li>The results provide evidence that the eczema drug SkinGreat performs slightly better than controls in a study comparing treated mice (n=30) against controls (n=30).</li>
+        </ol>
+        What are the differences between these statements? How do small changes in wording change the expressed impact?
+        <br><br>
+        <h2>Relationship to Generalizability</h2>
+    
+        <b>Generalizability</b> is defined as the ability to apply the results of a study to different settings, groups, and situations. Ultimately we would like to generate findings that remain consistent across various contexts (types of inquiry, measurement, and reproduction) [<a href="https://www.sciencedirect.com/topics/computer-science/generalizability">ScienceDirect</a>].
+        <br><br>
+        Generalizability can be achieved by careful and thoughtful communication of results in the context of prior and concurrent work from other researchers.
+        <br><br>
+        <b>A study is not “bad” if its findings are narrow. Problems arise when researchers claim broader applicability than their design supports.</b>
+
+  </main>
+
+  <footer>
+    <p>
+      Accessibility: This page is designed to support <strong>WCAG&nbsp;2.1 Level&nbsp;AA</strong> (semantic headings,
+      keyboard navigation, and clear structure). If you encounter accessibility barriers, please contact the project team.
+    </p>
+    <p>© E-PACERR — University of Nebraska at Omaha</p>
+  </footer>
+</body>
+</html>
