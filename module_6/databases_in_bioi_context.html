@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Databases</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="E-PACERR" />
+  <style>
+    :root {
+      --text: #111827;
+      --muted: #4b5563;
+      --link: #0f3d75;
+      --border: #e5e7eb;
+      --focus: #ffbf47;
+      --card: #fafafa;
+      --accent: #eef5ff;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background: #fff;
+    }
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .skip-link:focus {
+      left: 1rem;
+      top: 1rem;
+      width: auto;
+      height: auto;
+      padding: 0.6rem 0.85rem;
+      background: #000;
+      color: #fff;
+      z-index: 1000;
+    }
+    header, main, footer {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem;
+    }
+    header {
+      border-bottom: 2px solid var(--border);
+    }
+    h1, h2, h3 {
+      line-height: 1.25;
+    }
+    h1 {
+      margin: 0 0 0.5rem 0;
+      font-size: 2rem;
+    }
+    h2 {
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      font-size: 1.45rem;
+    }
+    h3 {
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+    p, li { font-size: 1rem; }
+    .lede {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 72ch;
+    }
+    .small {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .navlinks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1rem;
+      margin-top: 0.5rem;
+    }
+    a { color: var(--link); }
+    a:focus, summary:focus {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+    }
+    .card {
+      margin-top: 1rem;
+      padding: 1rem 1.1rem;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--card);
+    }
+    .highlight {
+      background: var(--accent);
+      border-left: 4px solid var(--link);
+      padding: 0.9rem 1rem;
+      margin: 1rem 0;
+      border-radius: 6px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    .grid .card { margin-top: 0; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.7rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: #f7f7f7; }
+    ul, ol { padding-left: 1.25rem; }
+    details {
+      margin: 1rem 0;
+      padding: 0.8rem 0.9rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: #fff;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 2rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      background: #f3f4f6;
+      padding: 0.1rem 0.3rem;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header>
+    <h1>Databases in the Context of Bioinformatics</h1>
+    <div class="navlinks" aria-label="Page navigation links">
+      <a href="./">&larr; Back to Module </a> 
+    </div>
+  </header>
+
+  <main id="main-content">
+ 
+       <section aria-labelledby="types-title">
+      <h2 id="types-title">Classifying Databases used in Bioinformatics</h2>
+      A <b>primary database</b> is one that contains original data, or data that was submitted directly by the person or group who collected it. 
+      <br><br>
+      One example of this is the <a href="https://www.ncbi.nlm.nih.gov/sra">Sequence Read Archive</a> from the National Center for Biotechnology Information. When an investigator generates sequencing data, they have the option to submit their data into the archive for others to re-use. 
+      <br><br>
+      A <b>secondary database</b> containes derived, integrated, or otherwise curated/annotated information built from other sources and may also include expert analysis. Multiple databases on <a href="https://www.ncbi.nlm.nih.gov/">NCBI</a> link to one another and bring in secondary data.
+     <br><br>
+     There are other types of specialized or niche databases that serve specific purposes in the bioinformatics community:
+     <ul>
+         <li><b>Point solution database</b> os designed to answer a specific biological question or support a defined workflow.</li>
+         <li><b>Deep database</b> is designed to provide rich information for one species or one tightly focused biological system, i.e. <a href="https://flybase.org/">FlyBase</a></li>
+         <li><b>Broad database</b> is designed to provide information organized across multiple species, usually by data type or biological system, i.e. <a href="https://www.expasy.org/resources/uniprotkb-swiss-prot">UniProt</a></li>
+          <li><b>Laboratory information management systems (LIMS)</b> is a database, usually with a graphical user interface, that helps manage samples, workflows, instruments, and associated metadata</li>
+          <li>An <strong>advanced custom database</strong> is an in-house resource designed for the needs of a specific lab, clinic, core, or company. These are useful for specialized data sets or time-sensitive workflows and may incorporate data from public community resources.</li>
+     </ul>
+
+    <section aria-labelledby="applications-title">
+      <h2 id="applications-title">Community Databases</h2>
+          <p>A <strong>community database</strong> is built for, used by, and often developed by a scientific community with a shared interest. Community databases broaden utility and support increased adoption, which is ideal for the scientific community. Support for thee resources often come from grants and are intended to make public data reuse and provenance possible.</li>
+          </p>
+        The National Center for Biotechnology Information, NCBI, is a collection of resources for scientists (and the public!), including a number of databases that are significant and critical for science research globally. <a href="https://www.ncbi.nlm.nih.gov/home/about/mission/">Per their website, NCBI has a number of responsiblities:</a>
+        
+        <div class="card">
+        <h3> </h3>
+        <p>
+            <i>"To carry out its diverse responsibilities, NCBI:
+            <ul>
+            <li>conducts research on fundamental biomedical problems at the molecular level using mathematical and computational methods</li>
+            <li>maintains collaborations with several NIH institutes, academia, industry, and other governmental agencies</li>
+            <li>fosters scientific communication by sponsoring meetings, workshops, and lecture series</li>
+            <li>supports training on basic and applied research in computational biology for postdoctoral fellows through the NIH Intramural Research Program</li>
+            <li>engages members of the international scientific community in informatics research and training through the Scientific Visitors Program</li>
+            <li><b>develops, distributes, supports, and coordinates access to a variety of databases and software for the scientific and medical communities</b></li>
+            <li><b>develops and promotes standards for databases, data deposition and exchange, and biological nomenclature"</b></li>
+            </ul></i>
+        </p>
+      </div>
+    </section>
+
+    <section aria-labelledby="history-title">
+      <h2 id="history-title">A Note on NCBI's History</h2>
+      <p>It is important for bioinformaticians to recognize the history of and resources dedicated to NCBI and related resources such as <a href = "https://www.embl.org/">EMBL</a>. NCBI was created through a specific legislative process in the United States after the scientists in collaboration with the National Library of Medicine identified molecular biology information management as a national need. NLM’s legislative chronology states that NCBI was established in 1988 under the Health Omnibus Programs Extension Act with strong support for Senator Claude Pepper [<a href="https://www.ncbi.nlm.nih.gov/sites/books/NBK148949/">Source</a>].</p>
+      
+      More information on the historical context for NCBI can be found in <i><a href="https://www.ncbi.nlm.nih.gov/sites/books/NBK148949/">A brief history of NCBI’s formation and growth</a></i> by Kent Smith.
+    </section>
+
+    <section aria-labelledby="NCBI Resources">
+      <h2 id="why-ncbi-title">NCBI Resources</h2>
+      <p>NCBI has become one of the most influential community database ecosystems in biomedical science. Recent changes in the United States National Institutes of Health funding models requires that <a href="https://grants.nih.gov/policy-and-compliance/policy-topics/sharing-policies/gds/data-submission-and-release-expectations">data generated by projects be submitted to these repositories (as appropriate) by funded investigators.</a> These changes support data re-use, reproducibility, and participation in the scientific method at large.
+      <br><br>
+      Remember - this is just an overview exposing you to resources that exist and context for bioinformatics. You can know these topics more thoroughly, and should let curiousity and due diligence guide your depth of study on these topics. You can find out more about NCBI resources, their purposes, and how to use them at the following links:
+      <ol>
+          <li><a href="https://www.ncbi.nlm.nih.gov/sites/books/NBK3831/">NCBI Help Manual</a></li> 
+          <li><a href="https://www.ncbi.nlm.nih.gov/sra/docs/">Sequence Read Archive (SRA) Documents and Guides</a></li> 
+          <li><a href="https://www.ncbi.nlm.nih.gov/guide/all/">NCBI How To FAQ</a></li> 
+         
+      </ol>
+       </p>
+       <h4>Interested in Historical Context or Resource Management?</h4>
+       While the current physical infrastructure and setup of NCBI resources is not available to the public, there are publications and other resources that capture early design for some NCBI databases and resources. For example, a publication describing the original Gene Expression Omnibus database schema was published in 2002 and contains descriptions of the database setup at the time:
+       <br><br>
+       Edgar, R., Domrachev, M., & Lash, A. E. (2002). <i>Gene Expression Omnibus: NCBI gene expression and hybridization array data repository.</i> <b>Nucleic acids research</b>, 30(1), 207-210. Link: <a href="academic.oup.com/nar/article/30/1/207/1332640">academic.oup.com/nar/article/30/1/207/1332640</a>
+       <br><br>
+       While it is no longer common to publish database data definition lanugage or data manipulation language (for multiple reasons, including but not limited to security and privacy), many resources do publish updates to their resources regularly, oftentimes in the same journal with similar title. See the examples below for more insights.
+     <br><br>  
+     <b>Sequence Read Archive Publications:</b>
+     <ul>
+         <li><b>2010:</b> Leinonen, R., Sugawara, H., Shumway, M., & International Nucleotide Sequence Database Collaboration. (2010). <b>The sequence read archive</b>. Nucleic acids research, 39(suppl_1), D19-D21. <a href="https://academic.oup.com/nar/article/39/suppl_1/D19/2505848">Link</a></li>
+         <li><b>2012:</b> Kodama, Y., Shumway, M., & Leinonen, R. (2012). <b>The Sequence Read Archive</b>: explosive growth of sequencing data. Nucleic acids research, 40(D1), D54-D56. <a href="https://academic.oup.com/nar/article/50/D1/D387/6438001">Link</a></li>
+         <li><b>2022:</b> Katz, K., Shutov, O., Lapoint, R., Kimelman, M., Brister, J. R., & O’Sullivan, C. (2022). <b>The Sequence Read Archive</b>: a decade more of explosive growth. Nucleic acids research, 50(D1), D387-D390. <a href="https://academic.oup.com/nar/article/50/D1/D387/6438001">Link</a></li>
+     </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Accessibility: This page is structured with semantic headings, keyboard-accessible controls, and clear navigation to support WCAG 2.1 AA-aligned use.</p>
+    <p>© E-PACERR — University of Nebraska at Omaha</p>
+  </footer>
+</body>
+</html>
