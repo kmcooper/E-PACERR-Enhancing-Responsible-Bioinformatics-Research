@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Reading: Introduction to Databases and their Application in Bioinformatics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="E-PACERR reading page on biological databases, pattern discovery, and the creation of NCBI." />
+  <style>
+    :root {
+      --text: #111827;
+      --muted: #4b5563;
+      --link: #0f3d75;
+      --border: #e5e7eb;
+      --focus: #ffbf47;
+      --card: #fafafa;
+      --accent: #eef5ff;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background: #fff;
+    }
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .skip-link:focus {
+      left: 1rem;
+      top: 1rem;
+      width: auto;
+      height: auto;
+      padding: 0.6rem 0.85rem;
+      background: #000;
+      color: #fff;
+      z-index: 1000;
+    }
+    header, main, footer {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem;
+    }
+    header {
+      border-bottom: 2px solid var(--border);
+    }
+    h1, h2, h3 {
+      line-height: 1.25;
+    }
+    h1 {
+      margin: 0 0 0.5rem 0;
+      font-size: 2rem;
+    }
+    h2 {
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      font-size: 1.45rem;
+    }
+    h3 {
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+    p, li { font-size: 1rem; }
+    .lede {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 72ch;
+    }
+    .small {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .navlinks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1rem;
+      margin-top: 0.5rem;
+    }
+    a { color: var(--link); }
+    a:focus, summary:focus {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+    }
+    .card {
+      margin-top: 1rem;
+      padding: 1rem 1.1rem;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--card);
+    }
+    .highlight {
+      background: var(--accent);
+      border-left: 4px solid var(--link);
+      padding: 0.9rem 1rem;
+      margin: 1rem 0;
+      border-radius: 6px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    .grid .card { margin-top: 0; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.7rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: #f7f7f7; }
+    ul, ol { padding-left: 1.25rem; }
+    details {
+      margin: 1rem 0;
+      padding: 0.8rem 0.9rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: #fff;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 2rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      background: #f3f4f6;
+      padding: 0.1rem 0.3rem;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header>
+    <h1>Biological Databases, Pattern Discovery, and the Creation of NCBI</h1>
+    <div class="navlinks" aria-label="Page navigation links">
+      <a href="./">&larr; Back to Module 4</a>
+      <a href="../">Back to all modules</a>
+    </div>
+    <p class="small">Estimated time to complete: 15–25 minutes</p>
+  </header>
+
+  <main id="main-content">
+ 
+   <section aria-labelledby="what-title">
+      <h2 id="what-title">What is a biological database?</h2>
+      <p>A <strong>biological database</strong> is any organized data source containing information useful or relevant to biology. In the early days of bioinformatics, biological databases were used to store, manage, share, and efficiently search growing repositories of biological data. As biomedical research accelerated and received federal support in the 1980s and 1990s, the need for database administration and information retrieval increased dramatically.</p>
+      <div class="highlight">
+        <strong>Core idea:</strong> Bioinformatics depends not only on generating data, but on storing that data in ways that make it searchable, interpretable, and reusable.
+      </div>
+    </section>
+
+    <section aria-labelledby="why-title">
+      <h2 id="why-title">Why do biological databases matter?</h2>
+      <p>Basic bioinformatics tasks rely on databases. Researchers use databases to search for patterns within sequences, compute descriptive statistics, compare sequences, align multiple sequences, infer phylogenetic relationships, and predict biological structure and function.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>Examples of Database-enabled Tasks</h3>
+          <ul>
+            <li>Sequence similarity search</li>
+            <li>Pairwise and multiple sequence alignment</li>
+            <li>Pattern and motif discovery</li>
+            <li>Phylogenetic analysis</li>
+            <li>Secondary and tertiary structure prediction</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Why This matters for Trainees</h3>
+          <p>Without well-structured databases, the same biological data become difficult to find, difficult to compare, and difficult to reuse responsibly.</p>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="pattern-title">
+      <h2 id="pattern-title">Pattern Discovery</h2>
+      <p>As biological and biomedical data volumes increase, so does the need for <strong>knowledge extraction</strong>. The process for traversing from data to knowledge on a smaller scale is similar to the way we generate knowledge via the scientific method. In database research communities, this is sometimes referred to as the <b>DIKW</b> pyramid: 
+      </p>
+      <img src="https://www.researchgate.net/publication/332400827/figure/fig6/AS:747208399912965@1555159773957/The-data-information-knowledge-wisdom-DIKW-hierarchy-as-a-pyramid-to-manage-knowledge.ppm" alt="A pyramid with data on the bottom, information on the next tier, knowledge on the next tier, and wisdom as the top tier of the pyramid. The image includes a red to green transition from the base of the pyramid (red) to the top (green) labeled decission risk.">
+      <p>This progression is often described with the <strong>DIKW</strong> idea: data, information, knowledge, and wisdom. In bioinformatics, databases support the first three steps especially well by enabling storage, curation, comparison, and retrieval [<a href="https://journals.sagepub.com/doi/abs/10.3233/HSM-1987-7108">Source</a>].</p>
+    </section>
+
+
+  </main>
+
+  <footer>
+    <p>Accessibility: This page is structured with semantic headings, keyboard-accessible controls, and clear navigation to support WCAG 2.1 AA-aligned use.</p>
+    <p>© E-PACERR — University of Nebraska at Omaha</p>
+  </footer>
+</body>
+</html>
