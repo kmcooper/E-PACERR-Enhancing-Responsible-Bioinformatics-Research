@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Reading: Information Retrieval in Bioinformatics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="E-PACERR reading page on information retrieval, keyword searching, and how IR differs from querying structured databases." />
+  <style>
+    :root {
+      --text: #111827;
+      --muted: #4b5563;
+      --link: #0f3d75;
+      --border: #e5e7eb;
+      --focus: #ffbf47;
+      --card: #fafafa;
+      --accent: #eef5ff;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background: #fff;
+    }
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .skip-link:focus {
+      left: 1rem;
+      top: 1rem;
+      width: auto;
+      height: auto;
+      padding: 0.6rem 0.85rem;
+      background: #000;
+      color: #fff;
+      z-index: 1000;
+    }
+    header, main, footer {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem;
+    }
+    header {
+      border-bottom: 2px solid var(--border);
+    }
+    h1, h2, h3 {
+      line-height: 1.25;
+    }
+    h1 {
+      margin: 0 0 0.5rem 0;
+      font-size: 2rem;
+    }
+    h2 {
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      font-size: 1.45rem;
+    }
+    h3 {
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+    p, li { font-size: 1rem; }
+    .lede {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 72ch;
+    }
+    .small {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .navlinks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1rem;
+      margin-top: 0.5rem;
+    }
+    a { color: var(--link); }
+    a:focus, summary:focus {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+    }
+    .card {
+      margin-top: 1rem;
+      padding: 1rem 1.1rem;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--card);
+    }
+    .highlight {
+      background: var(--accent);
+      border-left: 4px solid var(--link);
+      padding: 0.9rem 1rem;
+      margin: 1rem 0;
+      border-radius: 6px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    .grid .card { margin-top: 0; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.7rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: #f7f7f7; }
+    ul, ol { padding-left: 1.25rem; }
+    details {
+      margin: 1rem 0;
+      padding: 0.8rem 0.9rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: #fff;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 2rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      background: #f3f4f6;
+      padding: 0.1rem 0.3rem;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header>
+    <h1>Information Retrieval in Bioinformatics</h1>
+    <div class="navlinks" aria-label="Page navigation links">
+      <a href="./">&larr; Back to Module</a> |
+      <a href="../">Back to all modules</a>
+    </div>
+    <p class="small">Estimated time to complete: 15–25 minutes</p>
+    <p class="lede">
+      When people say they are “searching a database,” they may actually be doing two different things:
+      querying a structured database or using an information retrieval system. These are related, but they
+      are not the same.
+    </p>
+  </header>
+
+  <main id="main-content">
+
+    <section aria-labelledby="motivation-title">
+      <h2 id="motivation-title">Why this distinction matters</h2>
+      <p>
+        In bioinformatics, we often use the word <strong>search</strong> very loosely. A researcher may say they
+        “searched a database,” but the actual task could involve:
+      </p>
+      <ul>
+        <li>running a structured query against a database with a defined schema,</li>
+        <li>typing keywords into a search box,</li>
+        <li>retrieving articles or records ranked by relevance, or</li>
+        <li>looking across semi-structured documents with metadata and text.</li>
+      </ul>
+      <div class="highlight">
+        <strong>Core idea:</strong> A <strong>database query</strong> is usually designed for structured data with known fields.
+        <strong>Information retrieval (IR)</strong> is designed to find relevant information from a collection of documents or records,
+        often when the content is unstructured or only partly structured.
+      </div>
+    </section>
+
+    <section aria-labelledby="keyword-title">
+      <h2 id="keyword-title">Keyword searching as motivation</h2>
+      <p>
+        A <strong>keyword search</strong> looks for words anywhere in a collection of records or documents. Keyword searching is
+        very common in biology because users often know the concept they want, but they do not know the exact schema,
+        field names, or query language behind the resource.
+      </p>
+      <p>
+        In a traditional relational database, retrieval is often done through a query language such as
+        <code>SQL</code>. In contrast, keyword searching has long been central to information retrieval systems,
+        especially for text-heavy collections.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Why not just use SQL?</h3>
+          <ul>
+            <li>Every database may use a different schema.</li>
+            <li>Most users do not know SQL.</li>
+            <li>Even SQL varies across database systems.</li>
+            <li>Not all data resources are relational databases.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Why keyword search is attractive</h3>
+          <ul>
+            <li>It lowers the barrier to entry.</li>
+            <li>It lets users begin with concepts, not field names.</li>
+            <li>It works well for articles, abstracts, and descriptive text.</li>
+            <li>It supports exploratory searching.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="ir-title">
+      <h2 id="ir-title">What is information retrieval (IR)?</h2>
+      <p>
+        <strong>Information retrieval (IR)</strong> is the science of obtaining information relevant to a user’s need
+        from a collection of information resources. In practice, IR often treats information as a
+        <strong>collection of documents</strong> rather than as rows and columns in a highly structured table.
+      </p>
+      <p>
+        Those documents may be unstructured or semi-structured. They may contain titles, abstracts,
+        free text, metadata, controlled vocabulary terms, and identifiers. The goal is not simply to
+        find exact matches in a field, but to retrieve items that are likely to be relevant.
+      </p>
+
+      <div class="highlight">
+        <strong>IR asks:</strong> “Given this information need, which documents are most relevant?”
+        <br />
+        <strong>Database querying asks:</strong> “Given this structure, which records satisfy these exact conditions?”
+      </div>
+    </section>
+
+    <section aria-labelledby="difference-title">
+      <h2 id="difference-title">How is IR different from querying a database?</h2>
+
+      <table>
+        <caption class="small" style="caption-side: bottom; text-align: left; padding-top: 0.5rem;">
+          Table: Simplified comparison of information retrieval and database querying
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Feature</th>
+            <th scope="col">Information Retrieval (IR)</th>
+            <th scope="col">Database Querying</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Typical data</th>
+            <td>Unstructured or semi-structured documents</td>
+            <td>Structured records with defined fields</td>
+          </tr>
+          <tr>
+            <th scope="row">Organization</th>
+            <td>Collection of documents, text, metadata, identifiers</td>
+            <td>Schema-defined tables, fields, and relationships</td>
+          </tr>
+          <tr>
+            <th scope="row">User input</th>
+            <td>Keywords, phrases, concepts</td>
+            <td>Formal conditions and field-based constraints</td>
+          </tr>
+          <tr>
+            <th scope="row">Match style</th>
+            <td>Approximate or relevance-based</td>
+            <td>Exact logical conditions</td>
+          </tr>
+          <tr>
+            <th scope="row">Output</th>
+            <td>Ranked results by estimated relevance</td>
+            <td>Records that satisfy the query</td>
+          </tr>
+          <tr>
+            <th scope="row">Typical challenge</th>
+            <td>Ambiguity in terms and meaning</td>
+            <td>Knowing the schema and query language</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        IR systems also handle problems that are less central in traditional database querying, such as:
+      </p>
+      <ul>
+        <li><strong>approximate searching</strong> by keywords,</li>
+        <li><strong>ranking</strong> results by likely relevance, and</li>
+        <li><strong>language variation</strong> or synonymy in the way users describe concepts.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="bioi-title">
+      <h2 id="bioi-title">IR in bioinformatics</h2>
+      <p>
+        In bioinformatics, IR becomes especially important when the target information is embedded in text,
+        annotations, abstracts, article metadata, or descriptive records. Biological terms are often messy:
+        the same concept may appear under multiple names, abbreviations, or spellings.
+      </p>
+
+      <div class="card">
+        <h3>Example: semantic ambiguity</h3>
+        <p>
+          A user searching for information about <em>Bordetella pertussis</em> might search using:
+        </p>
+        <ul>
+          <li><code>pertussis</code></li>
+          <li><code>whooping cough</code></li>
+          <li><code>Bordetella pertussis</code></li>
+          <li><code>B. pertussis</code></li>
+        </ul>
+        <p>
+          A database system and an IR system may treat these very differently unless metadata, ontology,
+          controlled vocabulary, or query expansion are used.
+        </p>
+      </div>
+
+      <p>
+        This is one reason why standardized keyword systems, taxonomies, and controlled vocabularies are valuable.
+        They reduce ambiguity and help connect related terms during search and retrieval.
+      </p>
+    </section>
+
+
+    <section aria-labelledby="query-title">
+      <h2 id="query-title">Whats the Difference?</h2>
+      <p>
+        In practice, many modern websites combine both ideas. A site may store data in a structured backend
+        database, but expose a keyword-based interface to users. The underlying system may still rely
+        on database design but the user layer/front later behaves more like information retrieval. We don't want to expect users to know query language. 
+        <ol>
+            <li>Searching a resource and receiving a ranked list of results that you have to choose from is probably <b>information retreival</b></li>
+            <li>Getting records from a query where you type exact words, dates, identifiers or phrases is likely to be querying an actual database (or portion of it).</li>
+            <li>Sometimes, both can happen in the same resource.</li>
+        </ol>
+      </p>
+
+         
+    </section>
+
+    
+  </main>
+
+  <footer>
+    <p>
+      Accessibility: This page is structured with semantic headings, keyboard-accessible controls, and clear navigation
+      to support WCAG 2.1 AA-aligned use.
+    </p>
+    <p>© E-PACERR — University of Nebraska at Omaha</p>
+  </footer>
+</body>
+</html>
