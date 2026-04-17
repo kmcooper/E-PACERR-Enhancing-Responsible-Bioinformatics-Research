@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Designing Reproducible Bioinformatics Research: Beginner Checklist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root{
+      --text:#111;
+      --muted:#555;
+      --link:#003366;
+      --border:#e5e7eb;
+      --focus:#ffbf47;
+      --bg:#fff;
+      --bg-card:#fafafa;
+      --accent:#0f172a;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      line-height:1.6;
+      color:var(--text);
+      background:var(--bg);
+    }
+    a{color:var(--link)}
+    a:focus, button:focus, input:focus{outline:3px solid var(--focus); outline-offset:2px;}
+    .skip-link{
+      position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
+    }
+    .skip-link:focus{
+      position:static; width:auto; height:auto; padding:.5rem 1rem; display:inline-block;
+      background:#000; color:#fff; margin:.5rem;
+    }
+    header{
+      border-bottom:1px solid var(--border);
+      background:#fff;
+    }
+    .wrap{max-width:980px; margin:0 auto; padding:1rem;}
+    .breadcrumbs{font-size:.95rem; color:var(--muted); margin:.25rem 0 0}
+    .breadcrumbs a{color:var(--muted)}
+    h1{margin:.5rem 0 .25rem; font-size:1.75rem}
+    .subtitle{margin:0; color:var(--muted)}
+    main{padding:1rem 0 2rem}
+    .card{
+      border:1px solid var(--border);
+      background:var(--bg-card);
+      border-radius:14px;
+      padding:1rem;
+      margin:1rem 0;
+    }
+    .section-card{
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:1rem;
+      margin:0 0 1rem;
+      background:#fff;
+    }
+    h2{margin-top:0}
+    h3{margin:.25rem 0 .5rem; font-size:1.15rem}
+    .note{color:var(--muted); font-size:.98rem; margin:.25rem 0 0}
+    .meta{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:.75rem;
+      margin-top:1rem;
+    }
+    .meta div{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:.75rem;
+    }
+    .checklist{
+      list-style:none;
+      padding:0;
+      margin:.75rem 0 0;
+      display:grid;
+      gap:.65rem;
+    }
+    .checklist li{
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:.7rem .8rem;
+      background:#fcfcfc;
+    }
+    .checkrow{
+      display:flex;
+      gap:.7rem;
+      align-items:flex-start;
+    }
+    .checkrow input{
+      margin-top:.2rem;
+      width:1.05rem;
+      height:1.05rem;
+      flex:0 0 auto;
+    }
+    .small{color:var(--muted); font-size:.95rem}
+    .actions{display:flex; flex-wrap:wrap; gap:.75rem; margin-top:1rem}
+    button{
+      border:1px solid #111;
+      background:#111;
+      color:#fff;
+      border-radius:12px;
+      padding:.65rem .95rem;
+      cursor:pointer;
+      font-size:1rem;
+    }
+    button.secondary{background:#fff; color:#111;}
+    .progress{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:1rem;
+      margin-top:1rem;
+    }
+    .tip-list li{margin-bottom:.4rem}
+    footer{
+      border-top:1px solid var(--border);
+      color:var(--muted);
+      font-size:.95rem;
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header>
+    <h1>The Beginner Bioinformatician Checklist</h1
+    <p>
+      <a href="../">
+        ← Back to all modules
+      </a>
+    </p>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    <section class="card" aria-labelledby="about-title">
+      <h2 id="about-title">How to use this checklist</h2>
+      <p>This checklist is intentionally basic and is designed for students, beginner trainees, or anyone who is learning how to design a bioinformtics project that is organized, transparent, and easier for others to reproduce.</p>
+      Ideally, you would use this in the design stage of your project.
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="checklist-title">
+      <h2 id="checklist-title">Reproducibility checklist</h2>
+
+      <section class="section-card" aria-labelledby="s1-title">
+        <h3 id="s1-title">1. Project Setup and Team Communication</h3>
+        For the items below, consider all collaborators on your project as your team.
+        <ul class="checklist">
+          <li><label class="checkrow"><input type="checkbox" /> <span>The team agreed on the main research question before starting analysis.</span></label></li>
+          <li><label class="checkrow"><input type="checkbox" /> <span>The team talked with all stakeholders about goals, roles, and expectations.</span></label></li>
+          <li><label class="checkrow"><input type="checkbox" /> <span>The team identified who is responsible for data, code, documentation, and final outputs, and when you will check in to ensure these items are complete.</span></label></li>
+          <li><label class="checkrow"><input type="checkbox" /> <span>The team decided how the team will communicate changes to methods or results.</span></label></li>
+          <li><label class="checkrow"><input type="checkbox" /> <span>The team has a designated note taker role at each regular meeting instead of relying on memory.</span></label></li>
+        </ul>
+      </section>
+
+      <section class="section-card" aria-labelledby="s2-title">
+        <h3 id="s2-title">2. Research Question and Plan</h3>
+        <ul class="checklist">
+          <li><label class="checkrow"><input type="checkbox" /> <span>The biological or clinical question is clearly stated in plain language.</span></label></li>
+          <li><label class="checkrow"><input type="checkbox" /> <span>The team defined what counts as an input, an output, and a successful result and wrote it down in a central repository (GitHub, OneDrive, Dropbox, Google Drive, etc) shared with everyone on the team.</span></label></li>
+          <li><label class="checkrow"><input type="checkbox" /> <span>The team chose methods that match the question instead of picking tools first based on "vibes" or popularity.</span></label></li>
+          <li><label class="checkrow"><input type="checkbox" /> <span>The team documented assumptions that could affect interpretation.</span></label></li>
+          <li><label class="checkrow"><input type="checkbox" /> <span>The team discussed the possibility of unexpected results, null findings, or failed runs, and decided how and when those would be communicated.</span></label></li>
+        </ul>
+      </section>
+
+      <section class="section-card" aria-labelledby="s3-title">
+        <h3 id="s3-title">3. Data Planning and <anagement</h3>
+        <ul class="checklist">
+          <li><label class="checkrow"><input type="checkbox" /> <span>The team knows where every dataset came from, how it was aquired, its size/specifications, and any policies around its use (i.e. HIPAA compliance - a big one!).</span></label></li>
+          <li><label class="checkrow"><input type="checkbox" /> <span>The team has recorded dataset names, versions, access dates, and identifiers when available.</span></label></li>
+          <li><label class="checkrow"><input type="checkbox" /> <span>The team has created a simple data dictionary or README for important files (hopefully for ALL files).</span></label></li>
+          <li><label class="checkrow"><input type="checkbox" /> <span>The team has established a consistent naming system for files and folders.</span></label></li>
+          <li><label class="checkrow"><input type="checkbox" /> <span>The team has been versed on how to update files (replace old versions using versioning software instead of naming it file.txt, file_NEW.txt, file_NEW_newer.txt, etc.).</span></label></li>
+          <li><label class="checkrow"><input type="checkbox" /> <span>The team documented all filtering, exclusion, and preprocessing steps and any code used to perform them.</span></label></li>
+        </ul>
+      </section>
+
+      <section class="section-card" aria-labelledby="s4-title">
+        <h3 id="s4-title">4. Computing Environment and Code</h3>
+        <ul class="checklist">
+          <li><label class="checkrow"><input type="checkbox" /> <span>All analysis code is saved in one organized location.</span></label></li>
+          <li><label class="checkrow"><input type="checkbox" /> <span>The team is actively using version control or another clear method for tracking code changes.</span></label></li>
+          <li><label class="checkrow"><input type="checkbox" /> <span>Scripts have informative names and comments where a beginner would need help.</span></label></li>
+          <li><label class="checkrow"><input type="checkbox" /> <span>The team recorded software, package, and database versions.</span></label></li>
+          <li><label class="checkrow"><input type="checkbox" /> <span>The team noted whether the work was run locally, on a server, on a institutional resource, or in the cloud.</span></label></li>
+          <li><label class="checkrow"><input type="checkbox" /> <span>The team saved important parameters instead of leaving them only in command history.</span></label></li>
+        </ul>
+      </section>
+
+      <section class="section-card" aria-labelledby="s5-title">
+        <h3 id="s5-title">5. Workflow Transparency</h3>
+        <ul class="checklist">
+          <li><label class="checkrow"><input type="checkbox" /> <span>The analysis can be described as a clear sequence of steps from input to output, both in narrative and in code.</span></label></li>
+          <li><label class="checkrow"><input type="checkbox" /> <span>The team can point to which script, notebook, or workflow generates each major result.</span></label></li>
+          <li><label class="checkrow"><input type="checkbox" /> <span>Intermediate files are labeled clearly enough that others can follow the workflow.</span></label></li>
+          <li><label class="checkrow"><input type="checkbox" /> <span>Manual steps are reduced or written down so they are not hidden from future users.</span></label></li>
+          <li><label class="checkrow"><input type="checkbox" /> <span>The team reduced unnecessary copy-and-paste steps that are easy to forget or misapply.</span></label></li>
+        </ul>
+      </section>
+
+      <section class="section-card" aria-labelledby="s6-title">
+        <h3 id="s6-title">6. Quality Checks and Validation</h3>
+        <ul class="checklist">
+          <li><label class="checkrow"><input type="checkbox" /> <span>The team checked data quality before starting downstream analysis.</span></label></li>
+          <li><label class="checkrow"><input type="checkbox" /> <span>The team used simple confidence checks frequently and excessively to catch impossible values, missing files, or label errors.</span></label></li>
+          <li><label class="checkrow"><input type="checkbox" /> <span>the team tested the workflow on a small example before running the full project.</span></label></li>
+          <li><label class="checkrow"><input type="checkbox" /> <span>The team reviewed whether results are biologically or clinically plausible.</span></label></li>
+          <li><label class="checkrow"><input type="checkbox" /> <span>Another person has looked over at least one key step, figure, or table separate from the person who generated it.</span></label></li>
+        </ul>
+      </section>
+
+      <section class="section-card" aria-labelledby="s7-title">
+        <h3 id="s7-title">7. Sharing, Reporting, and Handoff</h3>
+        <ul class="checklist">
+          <li><label class="checkrow"><input type="checkbox" /> <span>The team wrote a short README or narrative explaining what the project is and how to run it.</span></label></li>
+          <li><label class="checkrow"><input type="checkbox" /> <span>Figures and tables can be traced back to the code and data that produced them.</span></label></li>
+          <li><label class="checkrow"><input type="checkbox" /> <span>The team explicitly stated limitations, uncertainties, and important decisions in the methods.</span></label></li>
+          <li><label class="checkrow"><input type="checkbox" /> <span>The team decided what data and code can be shared publicly and what must stay restricted.</span></label></li>
+          <li><label class="checkrow"><input type="checkbox" /> <span>A new student or teammate could understand the project without a long verbal explanation.</span></label></li>
+        </ul>
+      </section>
+
+      <div class="actions">
+        <button type="button" id="countBtn">Count Checked Items</button>
+        <button type="button" class="secondary" id="checkAllBtn">Check All</button>
+        <button type="button" class="secondary" id="clearBtn">Clear All</button>
+      </div>
+
+      <div id="progress" class="progress" role="status" aria-live="polite" aria-atomic="true">
+        <p><strong>Progress:</strong> 0 of 37 items checked.</p>
+        <p class="small">Tip: You do not need every box checked on day one. The goal is to make your work easier to understand, repeat, review, and improve.</p>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="starter-title">
+      <h2 id="starter-title">Good place to start</h2>
+      <ul class="tip-list">
+        <li>Talk to your collaborators early.</li>
+        <li>Name files clearly.</li>
+        <li>Save your code in one place.</li>
+        <li>Write down what you changed and why.</li>
+        <li>Make sure someone else can follow your workflow.</li>
+      </ul>
+    </section>
+  </main>
+
+
+  <script>
+    (function () {
+      const boxes = Array.from(document.querySelectorAll('input[type="checkbox"]'));
+      const progress = document.getElementById('progress');
+      const countBtn = document.getElementById('countBtn');
+      const checkAllBtn = document.getElementById('checkAllBtn');
+      const clearBtn = document.getElementById('clearBtn');
+
+      function updateProgress() {
+        const checked = boxes.filter(b => b.checked).length;
+        progress.innerHTML = '<p><strong>Progress:</strong> ' + checked + ' of ' + boxes.length + ' items checked.</p>' +
+          '<p class="small">Tip: You do not need every box checked on day one. The goal is to make your work easier to understand, repeat, review, and improve.</p>';
+      }
+
+      boxes.forEach(box => box.addEventListener('change', updateProgress));
+      countBtn.addEventListener('click', updateProgress);
+      checkAllBtn.addEventListener('click', function () {
+        boxes.forEach(b => b.checked = true);
+        updateProgress();
+      });
+      clearBtn.addEventListener('click', function () {
+        boxes.forEach(b => b.checked = false);
+        updateProgress();
+      });
+    })();
+  </script>
+</body>
+</html>
