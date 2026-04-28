@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Bioinformatics Competency Self-Assessment</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    :root {
+      --text: #111;
+      --muted: #555;
+      --link: #003366;
+      --border: #e5e7eb;
+      --focus: #ffbf47;
+      --bg-card: #fafafa;
+      --good: #166534;
+      --mid: #92400e;
+      --low: #b91c1c;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: #fff;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .skip-link:focus {
+      left: 1rem;
+      top: 1rem;
+      width: auto;
+      height: auto;
+      padding: 0.5rem 0.75rem;
+      background: #000;
+      color: #fff;
+      z-index: 1000;
+    }
+
+    header, main, footer {
+      max-width: 980px;
+      margin: auto;
+      padding: 1.5rem 1rem;
+    }
+
+    header {
+      border-bottom: 2px solid var(--border);
+    }
+
+    h1 {
+      margin-bottom: 0.25rem;
+    }
+
+    h2 {
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h3 {
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p, li {
+      max-width: 75ch;
+    }
+
+    .small {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .card {
+      margin-top: 1rem;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg-card);
+    }
+
+    .competency-block {
+      margin-top: 1.25rem;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .item {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .item:first-of-type {
+      border-top: 0;
+      padding-top: 0;
+      margin-top: 0;
+    }
+
+    .scale {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .scale label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.95rem;
+    }
+
+    .legend-list {
+      margin-top: 0.5rem;
+      padding-left: 1.25rem;
+    }
+
+    button {
+      margin-top: 1rem;
+      margin-right: 0.5rem;
+      padding: 0.7rem 1rem;
+      border: 1px solid #111;
+      border-radius: 6px;
+      background: #111;
+      color: #fff;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    button.secondary {
+      background: #fff;
+      color: #111;
+    }
+
+    .results {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg-card);
+    }
+
+    .score-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    .score-table th,
+    .score-table td {
+      border: 1px solid var(--border);
+      padding: 0.6rem;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .strength { color: var(--good); font-weight: 700; }
+    .developing { color: var(--mid); font-weight: 700; }
+    .support { color: var(--low); font-weight: 700; }
+
+    .hidden {
+      display: none;
+    }
+
+    .note {
+      margin-top: 0.75rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    a {
+      color: var(--link);
+    }
+
+    a:focus,
+    button:focus,
+    input:focus {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header>
+    <h1>Bioinformatics Competency Self-Assessment</h1>
+    <p class="small">
+      This self-check is designed to help you identify areas of confidence and areas where you may need more support before or during bioinformatics training.
+    </p>
+  </header>
+
+  <main id="main-content">
+
+    <section class="card" aria-labelledby="instructions-heading">
+      <h2 id="instructions-heading">How to use this self-assessment</h2>
+      <p>
+        Rate each statement using the scale below. Be honest: this is not graded. The goal is to help you figure out where you may be strong, where you are still developing, and where you may need additional instruction or practice.
+      </p>
+      <ul class="legend-list">
+        <li><strong>1</strong> = I have no experience with this (Unaware)</li>
+        <li><strong>2</strong> = I have heard of this, but I cannot do it yet (Aware)</li>
+        <li><strong>3</strong> = I can do this with help (With help)</li>
+        <li><strong>4</strong> = I can do this independently (Do)</li>
+        <li><strong>5</strong> = I can explain or teach this to others (Teach)</li>
+      </ul>
+    </section>
+
+    <form id="selfAssessmentForm">
+
+      <section class="competency-block" data-category="Biological Foundations">
+        <h2>1. Biological Foundations</h2>
+
+        <div class="item">
+          <p>1. I can explain how DNA, RNA, and proteins relate to common bioinformatics datasets.</p>
+          <div class="scale">
+            <label><input type="radio" name="q1" value="1">1: Unaware</label>
+            <label><input type="radio" name="q1" value="2">2: Aware</label>
+            <label><input type="radio" name="q1" value="3">3: With help</label>
+            <label><input type="radio" name="q1" value="4">4: Do</label>
+            <label><input type="radio" name="q1" value="5">5: Teach</label>
+          </div>
+        </div>
+
+        <div class="item">
+          <p>2. I can connect a biological research question to the kinds of data needed to answer it.</p>
+          <div class="scale">
+            <label><input type="radio" name="q2" value="1">1: Unaware</label>
+            <label><input type="radio" name="q2" value="2">2: Aware</label>
+            <label><input type="radio" name="q2" value="3">3: With help</label>
+            <label><input type="radio" name="q2" value="4">4: Do</label>
+            <label><input type="radio" name="q2" value="5">5: Teach</label>
+          </div>
+        </div>
+      </section>
+
+      <section class="competency-block" data-category="Computing and Data Handling">
+        <h2>2. Computing and Data Handling</h2>
+
+        <div class="item">
+          <p>3. I can work with common bioinformatics file types such as FASTA, FASTQ, CSV, or TSV.</p>
+          <div class="scale">
+            <label><input type="radio" name="q3" value="1">1: Unaware</label>
+            <label><input type="radio" name="q3" value="2">2: Aware</label>
+            <label><input type="radio" name="q3" value="3">3: With help</label>
+            <label><input type="radio" name="q3" value="4">4: Do</label>
+            <label><input type="radio" name="q3" value="5">5: Teach</label>
+          </div>
+        </div>
+
+        <div class="item">
+          <p>4. I can use a command line or similar computing environment to run basic tools or scripts.</p>
+          <div class="scale">
+            <label><input type="radio" name="q4" value="1">1: Unaware</label>
+            <label><input type="radio" name="q4" value="2">2: Aware</label>
+            <label><input type="radio" name="q4" value="3">3: With help</label>
+            <label><input type="radio" name="q4" value="4">4: Do</label>
+            <label><input type="radio" name="q4" value="5">5: Teach</label>
+          </div>
+        </div>
+
+        <div class="item">
+          <p>5. I can organize files, folders, and project materials in a way that others could follow.</p>
+          <div class="scale">
+            <label><input type="radio" name="q5" value="1">1: Unaware</label>
+            <label><input type="radio" name="q5" value="2">2: Aware</label>
+            <label><input type="radio" name="q5" value="3">3: With help</label>
+            <label><input type="radio" name="q5" value="4">4: Do</label>
+            <label><input type="radio" name="q5" value="5">5: Teach</label>
+          </div>
+        </div>
+      </section>
+
+      <section class="competency-block" data-category="Statistics and Interpretation">
+        <h2>3. Statistics and Interpretation</h2>
+
+        <div class="item">
+          <p>6. I can interpret common statistical ideas such as means, variation, p-values, and confidence intervals.</p>
+          <div class="scale">
+            <label><input type="radio" name="q6" value="1">1: Unaware</label>
+            <label><input type="radio" name="q6" value="2">2: Aware</label>
+            <label><input type="radio" name="q6" value="3">3: With help</label>
+            <label><input type="radio" name="q6" value="4">4: Do</label>
+            <label><input type="radio" name="q6" value="5">5: Teach</label>
+          </div>
+        </div>
+
+        <div class="item">
+          <p>7. I can choose an appropriate basic statistical test for a simple biological question.</p>
+          <div class="scale">
+            <label><input type="radio" name="q7" value="1">1: Unaware</label>
+            <label><input type="radio" name="q7" value="2">2: Aware</label>
+            <label><input type="radio" name="q7" value="3">3: With help</label>
+            <label><input type="radio" name="q7" value="4">4: Do</label>
+            <label><input type="radio" name="q7" value="5">5: Teach</label>
+          </div>
+        </div>
+
+        <div class="item">
+          <p>8. I can tell the difference between a result that is statistically significant and a result that is biologically meaningful.</p>
+          <div class="scale">
+            <label><input type="radio" name="q8" value="1">1: Unaware</label>
+            <label><input type="radio" name="q8" value="2">2: Aware</label>
+            <label><input type="radio" name="q8" value="3">3: With help</label>
+            <label><input type="radio" name="q8" value="4">4: Do</label>
+            <label><input type="radio" name="q8" value="5">5: Teach</label>
+          </div>
+        </div>
+      </section>
+
+      <section class="competency-block" data-category="Databases and Retrieval">
+        <h2>4. Databases and Information Retrieval</h2>
+
+        <div class="item">
+          <p>9. I can use common bioinformatics databases such as NCBI, UniProt, GEO, or related resources to find information.</p>
+          <div class="scale">
+            <label><input type="radio" name="q9" value="1">1: Unaware</label>
+            <label><input type="radio" name="q9" value="2">2: Aware</label>
+            <label><input type="radio" name="q9" value="3">3: With help</label>
+            <label><input type="radio" name="q9" value="4">4: Do</label>
+            <label><input type="radio" name="q9" value="5">5: Teach</label>
+          </div>
+        </div>
+
+        <div class="item">
+          <p>10. I understand the difference between keyword searching, information retrieval, and structured database querying.</p>
+          <div class="scale">
+            <label><input type="radio" name="q10" value="1">1: Unaware</label>
+            <label><input type="radio" name="q10" value="2">2: Aware</label>
+            <label><input type="radio" name="q10" value="3">3: With help</label>
+            <label><input type="radio" name="q10" value="4">4: Do</label>
+            <label><input type="radio" name="q10" value="5">5: Teach</label>
+          </div>
+        </div>
+
+        <div class="item">
+          <p>11. I can retrieve and interpret metadata needed to understand where a dataset came from and how it was generated.</p>
+          <div class="scale">
+            <label><input type="radio" name="q11" value="1">1: Unaware</label>
+            <label><input type="radio" name="q11" value="2">2: Aware</label>
+            <label><input type="radio" name="q11" value="3">3: With help</label>
+            <label><input type="radio" name="q11" value="4">4: Do</label>
+            <label><input type="radio" name="q11" value="5">5: Teach</label>
+          </div>
+        </div>
+      </section>
+
+      <section class="competency-block" data-category="Reproducibility and Workflow">
+        <h2>5. Reproducibility and Workflow</h2>
+
+        <div class="item">
+          <p>12. I can document enough of my analysis that another person could understand what I did.</p>
+          <div class="scale">
+            <label><input type="radio" name="q12" value="1">1: Unaware</label>
+            <label><input type="radio" name="q12" value="2">2: Aware</label>
+            <label><input type="radio" name="q12" value="3">3: With help</label>
+            <label><input type="radio" name="q12" value="4">4: Do</label>
+            <label><input type="radio" name="q12" value="5">5: Teach</label>
+          </div>
+        </div>
+
+        <div class="item">
+          <p>13. I can explain why versioning, workflow tracking, and clear file naming matter for reproducibility.</p>
+          <div class="scale">
+            <label><input type="radio" name="q13" value="1">1: Unaware</label>
+            <label><input type="radio" name="q13" value="2">2: Aware</label>
+            <label><input type="radio" name="q13" value="3">3: With help</label>
+            <label><input type="radio" name="q13" value="4">4: Do</label>
+            <label><input type="radio" name="q13" value="5">5: Teach</label>
+          </div>
+        </div>
+
+        <div class="item">
+          <p>14. I can evaluate whether a bioinformatics tool or pipeline is appropriate for a given task.</p>
+          <div class="scale">
+            <label><input type="radio" name="q14" value="1">1: Unaware</label>
+            <label><input type="radio" name="q14" value="2">2: Aware</label>
+            <label><input type="radio" name="q14" value="3">3: With help</label>
+            <label><input type="radio" name="q14" value="4">4: Do</label>
+            <label><input type="radio" name="q14" value="5">5: Teach</label>
+          </div>
+        </div>
+      </section>
+
+      <section class="competency-block" data-category="Communication and Collaboration">
+        <h2>6. Communication and Collaboration</h2>
+
+        <div class="item">
+          <p>15. I can explain a bioinformatics result clearly to someone with less computational experience.</p>
+          <div class="scale">
+            <label><input type="radio" name="q15" value="1">1: Unaware</label>
+            <label><input type="radio" name="q15" value="2">2: Aware</label>
+            <label><input type="radio" name="q15" value="3">3: With help</label>
+            <label><input type="radio" name="q15" value="4">4: Do</label>
+            <label><input type="radio" name="q15" value="5">5: Teach</label>
+          </div>
+        </div>
+
+        <div class="item">
+          <p>16. I can work across biology and computing perspectives without assuming that everyone shares the same background knowledge.</p>
+          <div class="scale">
+            <label><input type="radio" name="q16" value="1">1: Unaware</label>
+            <label><input type="radio" name="q16" value="2">2: Aware</label>
+            <label><input type="radio" name="q16" value="3">3: With help</label>
+            <label><input type="radio" name="q16" value="4">4: Do</label>
+            <label><input type="radio" name="q16" value="5">5: Teach</label>
+          </div>
+        </div>
+      </section>
+
+      <button type="button" onclick="scoreAssessment()">Calculate My Results</button>
+      <button type="reset" class="secondary" onclick="resetAssessment()">Reset</button>
+
+      <section id="results" class="results hidden" aria-live="polite">
+        <h2>Your Results</h2>
+        <p id="overallMessage"></p>
+
+        <table class="score-table">
+          <thead>
+            <tr>
+              <th>Competency Area</th>
+              <th>Average Score</th>
+              <th>Interpretation</th>
+            </tr>
+          </thead>
+          <tbody id="resultsTableBody"></tbody>
+        </table>
+
+        <div id="deficiencyBlock"></div>
+
+        <p class="note">
+          Suggested interpretation: averages of <strong>4.0–5.0</strong> indicate a relative strength,
+          <strong>3.0–3.9</strong> indicate a developing area, and anything <strong>below 3.0</strong>
+          suggests a likely area where more support, practice, or instruction would help.
+        </p>
+      </section>
+    </form>
+  </main>
+
+  <footer>
+    <p>
+      This self-assessment is intended as a reflective tool to help learners think about preparation, confidence, and support needs across common bioinformatics competency areas.
+    </p>
+  </footer>
+
+  <script>
+    function getCategoryData() {
+      return [
+        { name: "Biological Foundations", questions: ["q1", "q2"] },
+        { name: "Computing and Data Handling", questions: ["q3", "q4", "q5"] },
+        { name: "Statistics and Interpretation", questions: ["q6", "q7", "q8"] },
+        { name: "Databases and Information Retrieval", questions: ["q9", "q10", "q11"] },
+        { name: "Reproducibility and Workflow", questions: ["q12", "q13", "q14"] },
+        { name: "Communication and Collaboration", questions: ["q15", "q16"] }
+      ];
+    }
+
+    function selectedValue(questionName) {
+      const checked = document.querySelector('input[name="' + questionName + '"]:checked');
+      return checked ? Number(checked.value) : null;
+    }
+
+    function interpretScore(avg) {
+      if (avg >= 4.0) {
+        return { label: "Strength", className: "strength" };
+      } else if (avg >= 3.0) {
+        return { label: "Developing", className: "developing" };
+      } else {
+        return { label: "Needs Support", className: "support" };
+      }
+    }
+
+    function scoreAssessment() {
+      const categories = getCategoryData();
+      const tbody = document.getElementById("resultsTableBody");
+      const resultsSection = document.getElementById("results");
+      const deficiencyBlock = document.getElementById("deficiencyBlock");
+      const overallMessage = document.getElementById("overallMessage");
+
+      tbody.innerHTML = "";
+      deficiencyBlock.innerHTML = "";
+
+      let unanswered = [];
+      let allScores = [];
+      let supportAreas = [];
+      let developingAreas = [];
+
+      categories.forEach(category => {
+        let scores = [];
+
+        category.questions.forEach(q => {
+          const val = selectedValue(q);
+          if (val === null) {
+            unanswered.push(q);
+          } else {
+            scores.push(val);
+            allScores.push(val);
+          }
+        });
+
+        if (scores.length === category.questions.length) {
+          const avg = scores.reduce((a, b) => a + b, 0) / scores.length;
+          const interpretation = interpretScore(avg);
+
+          if (avg < 3.0) {
+            supportAreas.push(category.name);
+          } else if (avg < 4.0) {
+            developingAreas.push(category.name);
+          }
+
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>${category.name}</td>
+            <td>${avg.toFixed(2)}</td>
+            <td><span class="${interpretation.className}">${interpretation.label}</span></td>
+          `;
+          tbody.appendChild(row);
+        }
+      });
+
+      if (unanswered.length > 0) {
+        resultsSection.classList.remove("hidden");
+        overallMessage.innerHTML = "Please answer all items before calculating your results.";
+        deficiencyBlock.innerHTML = "";
+        return;
+      }
+
+      const overallAvg = allScores.reduce((a, b) => a + b, 0) / allScores.length;
+
+      if (supportAreas.length === 0 && developingAreas.length === 0) {
+        overallMessage.innerHTML = `Your overall average is <strong>${overallAvg.toFixed(2)}</strong>. You appear broadly confident across these competency areas.`;
+      } else if (supportAreas.length === 0) {
+        overallMessage.innerHTML = `Your overall average is <strong>${overallAvg.toFixed(2)}</strong>. You appear to have a solid base, with some areas that are still developing.`;
+      } else {
+        overallMessage.innerHTML = `Your overall average is <strong>${overallAvg.toFixed(2)}</strong>. You likely have some important areas where additional support or practice would be helpful before moving into more advanced work.`;
+      }
+
+      let deficiencyHTML = "";
+
+      if (supportAreas.length > 0) {
+        deficiencyHTML += `
+          <h3>Areas likely needing support</h3>
+          <ul>${supportAreas.map(area => `<li>${area}</li>`).join("")}</ul>
+        `;
+      }
+
+      if (developingAreas.length > 0) {
+        deficiencyHTML += `
+          <h3>Areas still developing</h3>
+          <ul>${developingAreas.map(area => `<li>${area}</li>`).join("")}</ul>
+        `;
+      }
+
+      if (supportAreas.length === 0 && developingAreas.length === 0) {
+        deficiencyHTML += `
+          <h3>Summary</h3>
+          <p>You did not flag any major deficiency areas in this self-check. Continue building fluency through practice and application.</p>
+        `;
+      } else {
+        deficiencyHTML += `
+          <h3>Suggested next step</h3>
+          <p>Focus first on the areas marked <strong>Needs Support</strong>, then revisit the <strong>Developing</strong> areas. These are the places where additional instruction, guided practice, or course support may help most.</p>
+        `;
+      }
+
+      deficiencyBlock.innerHTML = deficiencyHTML;
+      resultsSection.classList.remove("hidden");
+    }
+
+    function resetAssessment() {
+      document.getElementById("results").classList.add("hidden");
+      document.getElementById("resultsTableBody").innerHTML = "";
+      document.getElementById("deficiencyBlock").innerHTML = "";
+      document.getElementById("overallMessage").innerHTML = "";
+    }
+  </script>
+</body>
+</html>
