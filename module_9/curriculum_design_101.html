@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Reading: Bioinformatics Curriculum Design 101 </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    :root {
+      --text:#111;
+      --muted:#555;
+      --link:#003366;
+      --border:#e5e7eb;
+      --focus:#ffbf47;
+      --bg-card:#fafafa;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: #fff;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
+    .skip-link:focus {
+      left: 1rem;
+      top: 1rem;
+      width: auto;
+      height: auto;
+      padding: 0.5rem 0.75rem;
+      background: #000;
+      color: #fff;
+      z-index: 1000;
+    }
+
+    header, main, footer {
+      max-width: 960px;
+      margin: auto;
+      padding: 1.5rem 1rem;
+    }
+
+    header {
+      border-bottom: 2px solid var(--border);
+    }
+
+    h1 { margin-bottom: 0.25rem; }
+    h2 { margin-top: 2rem; }
+    h3 { margin-top: 1.25rem; }
+
+    a { color: var(--link); }
+
+    a:focus, summary:focus {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+    }
+
+    .small {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .card {
+      margin-top: 1rem;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg-card);
+    }
+
+    .callout {
+      margin: 1rem 0;
+      padding: 1rem;
+      border-left: 5px solid var(--link);
+      background: #f8fbff;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.75rem;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--bg-card);
+    }
+
+    details {
+      margin-top: 1rem;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg-card);
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header>
+    <h1>Reading: Curriculum Design 101</h1>
+    <p>
+      <a href="./">← Back to Module</a>
+    </p>
+  </header>
+
+  <main id="main-content">
+
+    <section>
+
+    <section>
+      <h2>Motivation</h2>
+      <p>
+        Curriculum design is more than choosing topics. A well-designed curriculum connects <strong>learning goals</strong>, <strong>instructional activities</strong>, and <strong>assessment</strong> so learners have repeated opportunities to practice, receive feedback, and build confidence. A curriculum should not only ask “What content should be covered?” It should also ask “What should learners be able to do, and how will they practice doing it?”. It also considers the cadence or pacing of learning, understanding that multiple touches on a topic over some period of time is better than "cramming" new information all at once. 
+      <p>
+        This is especially important in computer science and bioinformatics because learners often need to integrate several kinds of knowledge at once: biological context, computational thinking, programming or tool use, statistics, data management, and scientific communication.
+      </p>
+    </section>
+
+    <section>
+      <h2>Outcomes</h2>
+      <p>
+        In the 1990's, the US higher education system shifted towards development of courses around student learning outcomes. Therefore, a good first step to developing any learning resource is to write learning objectives that describe what learners should be able to do. In computing education, competency-based curriculum frameworks are often used to connect knowledge areas, skills, and observable outcomes. The ACM/IEEE CS2023 curricular guidelines, for example, organize computer science education around knowledge areas and competency expectations rather than a simple list of topics.
+      </p>
+
+      <div class="card">
+        <h3>Example</h3>
+        <p><strong>Outcome:</strong> Students will learn about databases.</p>
+        <p><strong>(Better, Measurable) Outcomen:</strong> Students will compare flat-file, relational, and NoSQL database models and explain how database structure can affect reproducibility.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Alignment</h2>
+      <p>
+        Alignment means the learning objectives, practice activities, and assessments all point in the same direction.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Design element</th>
+            <th>Question to ask</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Learning objective</td>
+            <td>What should learners be able to do?</td>
+            <td>Choose an appropriate statistical test for a simple research scenario.</td>
+          </tr>
+          <tr>
+            <td>Practice activity</td>
+            <td>How will learners practice that skill?</td>
+            <td>Classify short scenarios by data type, number of groups, and test choice.</td>
+          </tr>
+          <tr>
+            <td>Assessment</td>
+            <td>How will we know they can do it?</td>
+            <td>A quiz or case study asking learners to justify test selection.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        <strong>Check:</strong> If your objective says “analyze,” but your assessment only asks learners to define a term, the course is probably not aligned.
+      </div>
+    </section>
+
+    <section>
+      <h2>Inclusive Design</h2>
+      <p>
+        Learners enter bioinformatics with different backgrounds. Some may be strong in biology but new to computing. Others may be comfortable with code but less familiar with experimental design. Curriculum design should anticipate this variation.
+      </p>
+
+      <h3>Inclusive design practices</h3>
+      <ul>
+        <li>Define (or completely avoid) jargon at first mention</li>
+        <li>Provide examples, when appropriate, from multiple domains</li>
+        <li>Offer low-stakes practice before high-stakes assessment</li>
+        <li> Demonstrate use of clear file names, instructions, and expected outputs</li>
+        <li>Provide captions, transcripts, alt text, and keyboard-accessible materials</li>
+        <li>Help learners in a constructive way!</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Beginner Learning Resource Design Checklist</h2>
+      <ol>
+        <li>Write 1–2 measurable learning objectives</li>
+        <li>Identify the background knowledge learners need before starting</li>
+        <li>Break complex tasks into smaller steps</li>
+        <li>Provide examples (I do, we do, you do) </li>
+        <li>Include active practice, not just readings and lectures</li>
+        <li>Give feedback that explains what to improve</li>
+        <li>Include reflection so learners connect skills to their own work</li>
+        <li>Check accessibility and clarity of instructions</li>
+        <li>Revise based on learner performance and feedback</li>
+      </ol>
+    </section>
+
+    
+  </main>
+
+  <footer>
+    <p>© E-PACERR — University of Nebraska at Omaha</p>
+  </footer>
+</body>
+</html>
